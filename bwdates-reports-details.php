@@ -125,8 +125,10 @@ echo "{}];",
             
                   <th>Full Name</th>
               
-              <th>Contact Number</th>
-              <th>Email</th>
+              <th>Kategori</th>
+              <th>Mobile Number</th>
+              <th>Check-In</th>
+              <th>Check-Out</th>
                    <th>Action</th>
            </tr>
                                         </thead>
@@ -142,6 +144,7 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php echo $cnt;?></td>
             
                   <td><?php  echo $row['FullName'];?></td>
+                  <td><?php  echo $row['Jenis'];?></td>
                   <td><?php  echo $row['MobileNumber'];?></td>
                 <td><?php  echo $row['Email'];?></td>
                   <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>" title="View Full Details"><i class="fa fa-edit fa-1x"></i></a></td>
@@ -153,13 +156,15 @@ $cnt=$cnt+1;
 <tfoot>
 <tr>
                          
-                  <th>S.NO</th>
+<th>S.NO</th>
             
-                  <th>Full Name</th>
-              
-              <th>Contact Number</th>
-              <th>Email</th>
-                   <th>Action</th>
+            <th>Full Name</th>
+        
+        <th>Kategori</th>
+        <th>Mobile Number</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+             <th>Action</th>
 </tr>
 </tfoot>
                                     </table>
