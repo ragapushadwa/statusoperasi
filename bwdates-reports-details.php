@@ -146,7 +146,8 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php  echo $row['FullName'];?></td>
                   <td><?php  echo $row['Jenis'];?></td>
                   <td><?php  echo $row['MobileNumber'];?></td>
-                <td><?php  echo $row['Email'];?></td>
+                <td><?php  echo $row['EnterDate'];?></td>
+                <td><?php  echo $row['outtime'];?></td>
                   <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>" title="View Full Details"><i class="fa fa-edit fa-1x"></i></a></td>
                 </tr>
                 <?php 
