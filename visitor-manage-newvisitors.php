@@ -159,7 +159,7 @@ frm.submit(function(e) {
     },
     error: function(data) {
       console.log('An error occurred.');
-      console.log(data);
+      console.log("Oke");
     },
   });
 });
