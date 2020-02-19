@@ -44,10 +44,16 @@ if ($_SESSION['level']=="Visitor") {
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-	<script src="https://unpkg.com/gauge-chart@latest/dist/bundle.js"></script>
+    <style> 
+    ol.child { margin-left: 15px; }    
+    </style>
+	
+
 
 </head>
+<style>
 
+</style>
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -219,6 +225,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </script>
     <script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
+    <script src="https://unpkg.com/gauge-chart@latest/dist/bundle.js"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
@@ -423,6 +430,13 @@ var chart = new Chart(ctx, {
 });
 									
                    </script>
+
+<script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 
 </body>
 

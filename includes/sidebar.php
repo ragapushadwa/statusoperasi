@@ -7,7 +7,7 @@
             <div class="menu-sidebar__content js-scrollbar1">
 			
                 <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list" >
+                    <ul class="list-unstyled navbar__list tree" >
                         <li>
                             <a href="dashboard.php"  style="color: blue">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
@@ -17,11 +17,12 @@
                             <a href="pegawai-form.php"  style="color: blue">
                                 <i class="fa fa-user"></i>Pegawai Check In/Out</a>
                         </li>
-
+  
    <li>
                             <a href="manage-newvisitors.php"  style="color: blue">
                                 <i class="fa fa-users"></i>Manage Pegawai</a>
                         </li>
+                     
  <li>
                             <a href="statusoperasi.php"  style="color: blue">
                                 <i class="fa fa-line-chart"></i>Status Operasi</a>
@@ -30,9 +31,23 @@
                       <li>
                             <a href="bwdates-reports.php"  style="color: blue">
                                 <i class="fas fa-copy"></i>Report</a>
-                        </li>  
+                        </li> 
+                       
+         
+          
+       
                        
                     </ul>
+                    <ul>
+  
+  <li class="has-submenu"><a href="#" style="color:blue"><i class="fa fa-users"></i>Live Report</a>
+    <ul>
+      <li><a href="statusoperasi.php">Operasi Reaktor</a></li>
+      <li><a href="statusoperasi.php">GAM</a></li>
+      <li><a href="statusoperasi.php">BKO</a></li>
+    </ul>
+  </li>
+</ul>
                 </nav>
             </div>
         </aside>
