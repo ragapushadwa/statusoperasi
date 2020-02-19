@@ -502,13 +502,21 @@ selectElement.addEventListener('change', (event) => {
 	  GAM.show(1000);
   }
 });
+document.querySelector(".has-submenu ul").style.display="none";
+document.querySelector(".has-submenu").addEventListener("click",(event)=>{
+    let anak = document.querySelector(".has-submenu").children;
+    if (anak[1].style.display=="none"){
+        anak[1].style.display="block";  
+    }
+   else {
+    anak[1].style.display="none"; 
+   }
+   
 
+});
 	</script>
     <script>
-$(".has-submenu ul").hide();
-$(".has-submenu > a").click(function() {
-  $(this).next("ul").toggle();
-});
+
 </script>
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.3.1.min.js"></script>
