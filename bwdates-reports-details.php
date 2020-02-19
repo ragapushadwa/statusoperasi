@@ -242,6 +242,12 @@ console.log (lineChartData);
 <script src="https://cdn.datatables.net/plug-ins/1.10.20/sorting/numeric-comma.js "></script>
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 	<script type ='text/javascript'>
 	let count = lists.reduce((newObj, obj) => {
   if(newObj[obj.Time]) {

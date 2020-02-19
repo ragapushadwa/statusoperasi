@@ -157,6 +157,12 @@ frm.submit(function(e) {
   });
 });
 	</script>
+  <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>

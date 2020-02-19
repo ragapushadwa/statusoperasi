@@ -157,6 +157,12 @@ if (isset($_POST['login']))
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 
 </body>
 

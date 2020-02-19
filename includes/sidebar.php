@@ -43,8 +43,8 @@
   <li class="has-submenu"><a href="#" style="color:blue"><i class="fa fa-users"></i>Live Report</a>
     <ul>
       <li><a href="statusoperasi.php">Operasi Reaktor</a></li>
-      <li><a href="statusoperasi.php">GAM</a></li>
-      <li><a href="statusoperasi.php">BKO</a></li>
+      <li><a href="statusoperasigam.php">GAM</a></li>
+      <li><a href="statusoperasibko.php">BKO</a></li>
     </ul>
   </li>
 </ul>

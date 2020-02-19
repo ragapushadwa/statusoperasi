@@ -106,7 +106,12 @@ if(isset($_POST['submit']))
         </div>
 
     </div>
-
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap JS-->

@@ -191,7 +191,12 @@ frm.submit(function(e) {
     <script src="js/main.js"></script>
 	<!-- keluar-->
 
-
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 
 </body>
 

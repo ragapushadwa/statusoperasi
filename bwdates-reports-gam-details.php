@@ -235,6 +235,12 @@ $cnt=$cnt+1;
     <!-- Main JS-->
     <script src="js/main.js"></script>
 	<script type ='text/javascript' >
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 var lineChartData = [{label: "Series 1",values: []}];
 var lineChartData1 = [{label: "Series 2",values: []}];
 var lineChartData2 = [{label: "Series 3",values: []}];

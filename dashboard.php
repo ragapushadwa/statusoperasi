@@ -44,10 +44,7 @@ if ($_SESSION['level']=="Visitor") {
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-    <style> 
-    ol.child { margin-left: 15px; }    
-    </style>
-	
+   
 
 
 </head>
@@ -385,52 +382,7 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
       xhttp.send();
     }
     </script>
-									<script>
 								
-								var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-									
-                   </script>
-													<script>
-								var ctx = document.getElementById('myChart2').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-									
-                   </script>
-
 <script>
 $(".has-submenu ul").hide();
 $(".has-submenu > a").click(function() {

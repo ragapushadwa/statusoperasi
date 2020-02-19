@@ -211,6 +211,12 @@ $count_total_visitors=mysqli_num_rows($query3);
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 
 	<script>
 	let gauge = document.querySelector('#gaugeArea')

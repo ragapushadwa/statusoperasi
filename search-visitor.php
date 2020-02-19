@@ -199,6 +199,12 @@ $(document).ready(function() {
 	
 } );
 </script>
+<script>
+$(".has-submenu ul").hide();
+$(".has-submenu > a").click(function() {
+  $(this).next("ul").toggle();
+});
+</script>
 
 </html>
 <?php }  ?>
