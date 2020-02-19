@@ -28,6 +28,7 @@ if ($_SESSION['level']=="User") {
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="vendor/treeview/bootstrap-treeview.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -189,6 +190,7 @@ $count_total_visitors=mysqli_num_rows($query3);
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
     <!-- Vendor JS       -->
     <script src="vendor/slick/slick.min.js">
     </script>
@@ -205,6 +207,7 @@ $count_total_visitors=mysqli_num_rows($query3);
     <script src="vendor/select2/select2.min.js">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     </script>
+    
 
     <!-- Main JS-->
     <script src="js/main.js"></script>

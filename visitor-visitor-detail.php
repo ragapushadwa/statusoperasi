@@ -51,6 +51,7 @@ $query=mysqli_query($con,"update tblvisitor set remark='$remark' where  ID='$eid
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="vendor/treeview/bootstrap-treeview.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -195,6 +196,7 @@ while ($row=mysqli_fetch_array($ret)) {
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
+    <script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>

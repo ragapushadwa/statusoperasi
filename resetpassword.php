@@ -43,6 +43,7 @@ session_destroy();
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="vendor/treeview/bootstrap-treeview.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -137,7 +138,7 @@ return true;
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-
+<script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
     <!-- Main JS-->
     <script src="js/main.js"></script>
 

@@ -30,6 +30,7 @@ if ($_SESSION['level']=="Visitor") {
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/treeview/bootstrap-treeview.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -216,6 +217,7 @@ $cnt=$cnt+1;
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
 	<script src="vendor/chartjs/chart.js@2.8.0.js"></script>
     <script src="vendor/select2/select2.min.js"> </script>
+    <script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
 
 	<script src=" https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
 <script src=" https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"> </script>

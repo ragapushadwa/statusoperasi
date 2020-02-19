@@ -31,6 +31,7 @@ if ($_SESSION['level']=="Visitor") {
 
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+	<link href="vendor/treeview/bootstrap-treeview.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -174,6 +175,7 @@ if ($_SESSION['level']=="Visitor") {
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@1.8.0"></script>
+	<script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
