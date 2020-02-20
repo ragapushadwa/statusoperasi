@@ -26,8 +26,9 @@
     echo "{";
     echo '"No":' . $row['id'] . ',';
     echo '"Time":"' . $row['reading_time'] . '",';
-    echo '"Flux":' . $row['Flux'] . ',';
-	echo '"Daya":' . $row['Daya'] . ',';
+    
+    echo '"Daya":' . $row['Daya'] . ',';
+    echo '"Flux":' . $row['Lajur Alir'] . ',';
 
 	echo '"Suhu":' . $row['Suhu']  ;
     echo "},";

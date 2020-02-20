@@ -219,7 +219,7 @@ dataSuhu[1].push  (baru[i]['Suhu']);
         grafik(this.responseText);
         }
       };
-      xhttp.open("GET", "statusoperasijson.php", true);
+      xhttp.open("GET", "statusoperasijsonlimit.php", true);
       xhttp.send();
     }
     </script>

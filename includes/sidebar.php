@@ -34,20 +34,20 @@
                         </li> 
                        
          
-          
-       
-                       
-                    </ul>
-                    <ul>
+                        <ul>
   
-  <li class="has-submenu"><a href="#" style="color:blue"><i class="fa fa-users"></i>Live Report</a>
+  <li class="has-submenu"><a href="#" style="color:blue"><i class="fa fa-caret-square-o-down"></i>Live Report</a>
     <ul>
-      <li><a href="statusoperasi.php">Operasi Reaktor</a></li>
-      <li><a href="statusoperasigam.php">GAM</a></li>
-      <li><a href="statusoperasibko.php">BKO</a></li>
+      <li><a href="statusoperasi.php"><i class ="fa fa-line-chart"></i>Operasi Reaktor</a></li>
+      <li><a href="statusoperasigam.php"><i class ="fa fa-line-chart"></i>GAM</a></li>
+      <li><a href="statusoperasibko.php"><i class ="fa fa-line-chart"></i>BKO</a></li>
     </ul>
   </li>
 </ul>
+       
+                       
+                    </ul>
+                    
                 </nav>
             </div>
         </aside>
