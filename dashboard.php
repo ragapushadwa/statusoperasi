@@ -168,14 +168,14 @@ $count_total_visitors=mysqli_num_rows($query3);
                             </div>
                         </div>
 						
-						<div class = "Row" style= "display:table">
+						<div class = "row m-t-25">
 			
-						<div id="gaugeArea" style= "display:table-cell"></div>
-						<div id="gaugeArea1" style= "display:table-cell"></div>
-						<div id="gaugeArea2"style= "display:table-cell"></div>
-						<div id="gaugeArea3"style= "display:table-cell"></div>
-						<div id="gaugeArea4"style= "display:table-cell"></div>
-						<div id="gaugeArea5"style= "display:table-cell"></div>
+						<div class="col-sm-6 col-lg-3" id="gaugeArea" style= "display:table-cell"><br/></div>
+						<div class="col-sm-6 col-lg-3" id="gaugeArea1" style= "display:table-cell"><br/></div>
+						<div class="col-sm-6 col-lg-3" id="gaugeArea2"style= "display:table-cell"><br/></div>
+						<div class="col-sm-6 col-lg-3" id="gaugeArea3"style= "display:table-cell"><br/></div>
+						<div class="col-sm-6 col-lg-3"  id="gaugeArea4"style= "display:table-cell"><br/></div>
+						<div class="col-sm-6 col-lg-3" id="gaugeArea5"style= "display:table-cell"><br/></div>
 		</div>				
 						
 						

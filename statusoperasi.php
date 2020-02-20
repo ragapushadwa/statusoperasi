@@ -93,14 +93,14 @@ if ($_SESSION['level']=="Visitor") {
 						<canvas id="FluxChart"></canvas>
 
 							
-								<div class = "Row" style= "display:table">
+								<div class = "card-body" style= "display:table">
 			
-						<div id="gaugeArea" style= "display:table-cell"></div>
-						<div id="gaugeArea1" style= "display:table-cell"></div>
-						<div id="gaugeArea2"style= "display:table-cell"></div>
-						<div id="gaugeArea3"style= "display:table-cell"></div>
-						<div id="gaugeArea4"style= "display:table-cell"></div>
-						<div id="gaugeArea5"style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea" style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea1" style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea2"style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea3"style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea4"style= "display:table-cell"></div>
+						<div class ="card-body" id="gaugeArea5"style= "display:table-cell"></div>
 		</div>				
 								</div>		
 <div>

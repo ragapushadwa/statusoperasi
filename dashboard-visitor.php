@@ -234,7 +234,7 @@ $(".has-submenu > a").click(function() {
       //arcOverEffect: false,
       // label options
       rangeLabel: ['0', '350'],
-      centralLabel: '150',
+      centralLabel: 'GAM1',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -255,13 +255,13 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
           nilai=nilai+'<tr><th>'+(coba[i]["No"])+'</th><th>'+coba[i]["Time"]+'</th><th>'+coba[i]["GAM1"]+'</th>'+'</th><th>'+coba[i]["GAM2"]+'</th>'+'</th><th>'+coba[i]["GAM3"]+'</th>'+'</th><th>'+coba[i]["GAM4"]+'</th>'+'</th><th>'+coba[i]["GAM5"]+'</th>'+'</th><th>'+coba[i]["GAM6"]+'</th></tr>';
         document.getElementById('gaugeArea').innerHTML = '';
 	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM1"]);
-	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM2"]);
-	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM3"]);
-	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM4"]);
-	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM5"]);
-	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM6"]);
+	  //GaugeChart.gaugeChart(gauge1, 300, gaugeOptions).updateNeedle(coba[0]["GAM2"]);
+	  //GaugeChart.gaugeChart(gauge2, 300, gaugeOptions).updateNeedle(coba[0]["GAM3"]);
+	  //GaugeChart.gaugeChart(gauge3, 300, gaugeOptions).updateNeedle(coba[0]["GAM4"]);
+	  //GaugeChart.gaugeChart(gauge4, 300, gaugeOptions).updateNeedle(coba[0]["GAM5"]);
+	  //GaugeChart.gaugeChart(gauge5, 300, gaugeOptions).updateNeedle(coba[0]["GAM6"]);
 		}
-        $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
+       // $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
       
 	  
 	  setTimeout(function() {autotable()}, 1000);
@@ -278,51 +278,7 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
       xhttp.send();
     }
     </script>
-									<script>
-								var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
 									
-                   </script>
-													<script>
-								var ctx = document.getElementById('myChart2').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-// Element inside which you want to see the chart
-
-                   </script>
 				   
 
 </body>
