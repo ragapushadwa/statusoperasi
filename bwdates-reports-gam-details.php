@@ -234,7 +234,7 @@ $cnt=$cnt+1;
 	
     <!-- Main JS-->
     <script src="js/main.js"></script>
-	<script type ='text/javascript' >
+	<script type ='text/javascript' ></script>
     <script>
 $(".has-submenu ul").hide();
 $(".has-submenu > a").click(function() {

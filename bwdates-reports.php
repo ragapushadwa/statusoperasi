@@ -507,9 +507,26 @@ selectElement.addEventListener('change', (event) => {
 	  GAM.show(1000);
   }
 });
+document.querySelector(".has-submenu ul").style.display="none";
+document.querySelector(".has-submenu").addEventListener("click",(event)=>{
+    let anak = document.querySelector(".has-submenu").children;
+    if (anak[1].style.display=="none"){
+        anak[1].style.display="block";  
+    }
+   else {
+    anak[1].style.display="none"; 
+   }
+   
 
+});
 	</script>
+<<<<<<< HEAD
     
+=======
+    <script>
+
+</script>
+>>>>>>> d549c9713d9afbac66e05fa8dc5f38e018e289f7
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap JS-->
