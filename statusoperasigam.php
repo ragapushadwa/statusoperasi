@@ -333,22 +333,19 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
       let GAM4=[];
       let GAM5=[];
       let GAM6=[];
+	  for (i=0;i<(coba.length-1);i++){
+	
+	
+GAM1[0].push  (coba[i]['Time']);
+GAM1[1].push  (coba[i]['GAM1']);
+GAM2[0].push  (coba[i]['Time']);
+GAM2[1].push  (coba[i]['GAM2']);
 
-         coba.forEach((a)=>
-      {
-		GAM1[0].push  (coba[i]['Time']);
-		GAM1[1].push  (coba[i]['GAM1']);
-		GAM2[0].push  (coba[i]['Time']);
-		GAM2[1].push  (coba[i]['GAM2']);
-          
-          GAM3.push(a['GAM3']);
-          GAM4.push(a['GAM4']);
-          GAM5.push(a['GAM5']);
-          GAM6.push(a['GAM6']);
-          Time.push(a['Time']);
 
-           });  
-		   
+
+
+}
+		   console.log(GAM1)
     var ctx = document.getElementById('FluxChart').getContext('2d');
 
 var chart = new Chart(ctx, {

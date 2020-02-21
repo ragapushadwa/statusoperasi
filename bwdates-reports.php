@@ -273,12 +273,7 @@ if ($_SESSION['level']==Visitor) {
         </div>
    </div>
     </div>
-    <script >
-$(".has-submenu ul").hide();
-$(".has-submenu > a").click(function() {
-  $(this).next("ul").toggle();
-});
-</script>
+   
 
 <script>
 	const selectElement = document.querySelector('.dropdown');
