@@ -302,10 +302,18 @@ $(".has-submenu > a").click(function() {
 GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 </script>
 <script type='text/javascript'>
+let waktu="";
+      let GAM1=0;
+      let GAM2=0;
+      let GAM3=[];
+      let GAM4=[];
+      let GAM5=[];
+      let GAM6=[];
+	  var coba=new Array();
     $(document).ready(function() {
       autotable();
     });
-    var coba=new Array();
+   
     function maketable(data){
         coba=JSON.parse(data);
         var nilai="";
@@ -326,61 +334,21 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 	  GaugeChart.gaugeChart(gauge5, 300, gaugeOptions5).updateNeedle(coba[0]["GAM6"]);
 		}
         $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
-      let Time=[];
-      let GAM1=[[],[]];
-      let GAM2=[[],[]];
-      let GAM3=[];
-      let GAM4=[];
-      let GAM5=[];
-      let GAM6=[];
+      
+	
 	  for (i=0;i<(coba.length-1);i++){
 	
 	
-GAM1[0].push  (coba[i]['Time']);
-GAM1[1].push  (coba[i]['GAM1']);
-GAM2[0].push  (coba[i]['Time']);
-GAM2[1].push  (coba[i]['GAM2']);
+waktu=coba[i]['Time'];
+GAM1=coba[i]['GAM1'];
+
+GAM2=coba[i]['GAM2'];
 
 
 
 
 }
-		   console.log(GAM1)
-    var ctx = document.getElementById('FluxChart').getContext('2d');
-
-var chart = new Chart(ctx, {
-
-  type: 'line',
-
-  data: {
-
-    datasets: [{
-
-      data: GAM1
-
-    }, {
-
-      data: GAM2
-
-    }]
-
-  },
-
-  options: {
-
-    scales: {
-
-      xAxes: [{
-
-        type: 'realtime'
-
-      }]
-
-    }
-
-  }
-
-});
+ 
 	  setTimeout(function() {autotable()}, 1000);
 	
           }
@@ -397,14 +365,8 @@ var chart = new Chart(ctx, {
    
 
     </script>
-	
-								
-                   
-				   
-				   <script>
-				   var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.userAgent.indexOf('Trident') !== -1;
-
-var chartColors = {
+	<script>
+	var chartColors = {
 	red: 'rgb(255, 99, 132)',
 	orange: 'rgb(255, 159, 64)',
 	yellow: 'rgb(255, 205, 86)',
@@ -419,12 +381,22 @@ function randomScalingFactor() {
 }
 
 function onRefresh(chart) {
-	chart.config.data.datasets.forEach(function(dataset) {
-		dataset.data.push({
-			x: Date.now(),
-			y: randomScalingFactor()
+	let meme = chart.config.data.datasets;
+		meme[0].data.push({
+			x: waktu,
+			y: GAM1
 		});
-	});
+		meme[1].data.push({
+			x: waktu,
+			y: GAM2
+		});
+		console.log(meme[1].data)
+	//chart.config.data.datasets.forEach(function(dataset) {
+		//dataset.data.push({
+		//	x: Date.now(),
+			//y: randomScalingFactor()
+		//});
+	//});
 }
 
 var color = Chart.helpers.color;
@@ -451,23 +423,19 @@ var config = {
 	options: {
 		title: {
 			display: true,
-			text: 'Interactions sample'
+			text: 'Line chart (hotizontal scroll) sample'
 		},
 		scales: {
 			xAxes: [{
 				type: 'realtime',
 				realtime: {
 					duration: 20000,
-					ttl: 60000,
 					refresh: 1000,
 					delay: 2000,
-					pause: false,
 					onRefresh: onRefresh
 				}
 			}],
 			yAxes: [{
-				type: 'linear',
-				display: true,
 				scaleLabel: {
 					display: true,
 					labelString: 'value'
@@ -481,11 +449,6 @@ var config = {
 		hover: {
 			mode: 'nearest',
 			intersect: false
-		},
-		plugins: {
-			streaming: {
-				frameRate: 30
-			}
 		}
 	}
 };
@@ -501,7 +464,6 @@ document.getElementById('randomizeData').addEventListener('click', function() {
 			dataObj.y = randomScalingFactor();
 		});
 	});
-
 	window.myChart.update();
 });
 
@@ -531,43 +493,11 @@ document.getElementById('addData').addEventListener('click', function() {
 	onRefresh(window.myChart);
 	window.myChart.update();
 });
-
-document.getElementById('duration').addEventListener(isIE ? 'change' : 'input', function() {
-	config.options.scales.xAxes[0].realtime.duration = +this.value;
-	window.myChart.update({duration: 0});
-	document.getElementById('durationValue').innerHTML = this.value;
-});
-
-document.getElementById('ttl').addEventListener(isIE ? 'change' : 'input', function() {
-	config.options.scales.xAxes[0].realtime.ttl = +this.value;
-	window.myChart.update({duration: 0});
-	document.getElementById('ttlValue').innerHTML = this.value;
-});
-
-document.getElementById('refresh').addEventListener(isIE ? 'change' : 'input', function() {
-	config.options.scales.xAxes[0].realtime.refresh = +this.value;
-	window.myChart.update({duration: 0});
-	document.getElementById('refreshValue').innerHTML = this.value;
-});
-
-document.getElementById('delay').addEventListener(isIE ? 'change' : 'input', function() {
-	config.options.scales.xAxes[0].realtime.delay = +this.value;
-	window.myChart.update({duration: 0});
-	document.getElementById('delayValue').innerHTML = this.value;
-});
-
-document.getElementById('frameRate').addEventListener(isIE ? 'change' : 'input', function() {
-	config.options.plugins.streaming.frameRate = +this.value;
-	window.myChart.update({duration: 0});
-	document.getElementById('frameRateValue').innerHTML = this.value;
-});
-
-document.getElementById('pause').addEventListener('change', function() {
-	config.options.scales.xAxes[0].realtime.pause = this.checked;
-	window.myChart.update({duration: 0});
-	document.getElementById('pauseValue').innerHTML = this.checked;
-});
-
+								
+                   
+				   
+				   
+				 
 </script>
 
 </body>
