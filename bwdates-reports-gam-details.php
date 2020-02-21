@@ -241,6 +241,7 @@ $(".has-submenu > a").click(function() {
   $(this).next("ul").toggle();
 });
 </script>
+<script>
 var lineChartData = [{label: "Series 1",values: []}];
 var lineChartData1 = [{label: "Series 2",values: []}];
 var lineChartData2 = [{label: "Series 3",values: []}];

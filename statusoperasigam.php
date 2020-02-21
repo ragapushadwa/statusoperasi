@@ -326,9 +326,9 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 	  GaugeChart.gaugeChart(gauge5, 300, gaugeOptions5).updateNeedle(coba[0]["GAM6"]);
 		}
         $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
-      
-      let GAM1=[];
-      let GAM2=[];
+      let Time=[];
+      let GAM1=[[],[]];
+      let GAM2=[[],[]];
       let GAM3=[];
       let GAM4=[];
       let GAM5=[];
@@ -336,15 +336,19 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 
          coba.forEach((a)=>
       {
-          GAM1.push(a['GAM1']);
-          GAM2.push(a['GAM2']);
+		GAM1[0].push  (coba[i]['Time']);
+		GAM1[1].push  (coba[i]['GAM1']);
+		GAM2[0].push  (coba[i]['Time']);
+		GAM2[1].push  (coba[i]['GAM2']);
+          
           GAM3.push(a['GAM3']);
           GAM4.push(a['GAM4']);
           GAM5.push(a['GAM5']);
           GAM6.push(a['GAM6']);
-          
+          Time.push(a['Time']);
 
            });  
+		   
     var ctx = document.getElementById('FluxChart').getContext('2d');
 
 var chart = new Chart(ctx, {
