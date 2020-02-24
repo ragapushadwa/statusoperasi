@@ -336,24 +336,15 @@ let waktu="";
         $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
       
 	
-	  for (i=0;i<(coba.length-1);i++){
 	
 	
-waktu=coba[i]['Time'];
-GAM1=coba[i]['GAM1'];
-
-GAM2=coba[i]['GAM2'];
-GAM3=coba[i]['GAM3'];
-GAM4=coba[i]['GAM4'];
-GAM5=coba[i]['GAM5'];
-GAM6=coba[i]['GAM6'];
-
-console.log(GAM1)
 
 
-}
+
+
+
  
-	  setTimeout(function() {autotable()},5000);
+	  setTimeout(function() {autotable()},1000);
 	
           }
     function autotable(){
@@ -385,6 +376,26 @@ function randomScalingFactor() {
 }
 
 function onRefresh(chart) {
+	fetch("json.php")
+.then((res)=>res.json())
+.then((data)=>{
+	for (i=0;i<(data.length-1);i++){
+	
+	
+	waktu=data[i]['Time'];
+	GAM1=data[i]['GAM1'];
+	
+	GAM2=data[i]['GAM2'];
+	GAM3=data[i]['GAM3'];
+	GAM4=data[i]['GAM4'];
+	GAM5=data[i]['GAM5'];
+	GAM6=data[i]['GAM6'];
+	
+	console.log(GAM1)
+	
+	
+	}
+});
 	let meme = chart.config.data.datasets;
 		meme[0].data.push({
 			x: waktu,
@@ -411,7 +422,7 @@ function onRefresh(chart) {
 			y: GAM6
 		});
 		chart.update({
-                                    preservation: true
+                                    preservation: false
                                 });
 		
 	//chart.config.data.datasets.forEach(function(dataset) {
