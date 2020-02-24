@@ -84,25 +84,7 @@ if ($_SESSION['level']=="Visitor") {
                     <div class="container-fluid">
 		
 						
-						<div class="row">
-						
-								
-						
-					
-						
-						<canvas id="FluxChart"></canvas>
-
 							
-								<div class = "Row" style= "display:table">
-			
-						<div id="gaugeArea" style= "display:table-cell"></div>
-						<div id="gaugeArea1" style= "display:table-cell"></div>
-						<div id="gaugeArea2"style= "display:table-cell"></div>
-						<div id="gaugeArea3"style= "display:table-cell"></div>
-						<div id="gaugeArea4"style= "display:table-cell"></div>
-						<div id="gaugeArea5"style= "display:table-cell"></div>
-		</div>				
-								</div>		
 <div>
 		<canvas id="myChart"></canvas>
 	</div>
@@ -186,121 +168,8 @@ $(".has-submenu > a").click(function() {
 });
 </script>
 	
-	<script>
-	let gauge = document.querySelector('#gaugeArea')
-	let gauge1 = document.querySelector('#gaugeArea1')
-	let gauge2 = document.querySelector('#gaugeArea2')
-	let gauge3 = document.querySelector('#gaugeArea3')
-	let gauge4 = document.querySelector('#gaugeArea4')
-	let gauge5 = document.querySelector('#gaugeArea5')
 	
 
-// Properties of the gauge
-  let gaugeOptions = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM1',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-  let gaugeOptions1 = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM2',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-	  let gaugeOptions2 = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM3',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-	  let gaugeOptions3 = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM4',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-	  let gaugeOptions4 = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM5',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-	  let gaugeOptions5 = {
-	    hasNeedle: true,
-	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
-      arcDelimiters: [10, 60],
-      arcPadding: 6,
-      arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
-      arcLabelFontSize: false,
-      //arcOverEffect: false,
-      // label options
-      rangeLabel: ['0', '350'],
-      centralLabel: 'GAM6',
-      rangeLabelFontSize: false,
-      labelsFont: 'Consolas',
-	  needleUpdateSpeed: 0,
-    }
-// Drawing and updating the chart
-GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
-</script>
 <script type='text/javascript'>
 var coba=new Array();
 	   let waktu = "";
