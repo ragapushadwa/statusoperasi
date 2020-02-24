@@ -365,7 +365,7 @@ var mixedChart = new Chart(ctx, {
 <script>
 $(document).ready(function() {
     $('#gamtabel').DataTable( {
-		"lengthMenu": [[-1,50,25,10], ["All",50,25,10]],  
+		"lengthMenu": [[0,10,25,50,-1], [0,10,25,50,"All"]],  
 	
         dom: 'Bfrit',
 		
