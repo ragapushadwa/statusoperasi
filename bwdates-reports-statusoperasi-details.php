@@ -295,7 +295,7 @@ for (i=0;i<(lists.length-1);i++){
 	console.log(lists);
 	
 lists2[0].push  (lists[i]['Time']);
-lists2[1].push  (lists[i]['Laju Alir']);
+lists2[1].push  (lists[i]['LajuAlir']);
 lists3[0].push  (lists[i]['Time']);
 lists3[1].push  (lists[i]['Daya']);
 lists4[0].push  (lists[i]['Time']);

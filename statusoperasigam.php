@@ -124,8 +124,8 @@ if ($_SESSION['level']=="Visitor") {
 	</div>
 	<div>
 		<span class="label">refresh:</span>
-		<span id="refreshValue" class="value">1000</span>
-		<span><input type="range" min="50" max="3000" step="50" value="1000" id="refresh" class="control"></span>
+		<span id="refreshValue" class="value">5000</span>
+		<span><input type="range" min="50" max="5000" step="50" value="5000" id="refresh" class="control"></span>
 	</div>
 	<div>
 		<span class="label">delay:</span>
@@ -305,10 +305,10 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 let waktu="";
       let GAM1=0;
       let GAM2=0;
-      let GAM3=[];
-      let GAM4=[];
-      let GAM5=[];
-      let GAM6=[];
+      let GAM3=0;
+      let GAM4=0;
+      let GAM5=0;
+      let GAM6=0;
 	  var coba=new Array();
     $(document).ready(function() {
       autotable();
@@ -343,13 +343,17 @@ waktu=coba[i]['Time'];
 GAM1=coba[i]['GAM1'];
 
 GAM2=coba[i]['GAM2'];
+GAM3=coba[i]['GAM3'];
+GAM4=coba[i]['GAM4'];
+GAM5=coba[i]['GAM5'];
+GAM6=coba[i]['GAM6'];
 
-
+console.log(GAM1)
 
 
 }
  
-	  setTimeout(function() {autotable()}, 1000);
+	  setTimeout(function() {autotable()},5000);
 	
           }
     function autotable(){
@@ -390,7 +394,26 @@ function onRefresh(chart) {
 			x: waktu,
 			y: GAM2
 		});
-		console.log(meme[1].data)
+		meme[2].data.push({
+			x: waktu,
+			y: GAM3
+		});
+		meme[3].data.push({
+			x: waktu,
+			y: GAM4
+		});
+		meme[4].data.push({
+			x: waktu,
+			y: GAM5
+		});
+		meme[5].data.push({
+			x: waktu,
+			y: GAM6
+		});
+		chart.update({
+                                    preservation: true
+                                });
+		
 	//chart.config.data.datasets.forEach(function(dataset) {
 		//dataset.data.push({
 		//	x: Date.now(),
@@ -398,13 +421,14 @@ function onRefresh(chart) {
 		//});
 	//});
 }
+var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.userAgent.indexOf('Trident') !== -1;
 
 var color = Chart.helpers.color;
 var config = {
 	type: 'line',
 	data: {
 		datasets: [{
-			label: 'Dataset 1 (linear interpolation)',
+			label: 'GAM1',
 			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
 			borderColor: chartColors.red,
 			fill: false,
@@ -412,8 +436,38 @@ var config = {
 			borderDash: [8, 4],
 			data: []
 		}, {
-			label: 'Dataset 2 (cubic interpolation)',
+			label: 'GAM2',
+			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
+			borderColor: chartColors.blue,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},{
+
+			label: 'GAM3',
+			backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
+			borderColor: chartColors.blue,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},{
+			label: 'GAM4',
 			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+			borderColor: chartColors.blue,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},
+		{
+			label: 'GAM5',
+			backgroundColor: color(chartColors.purple).alpha(0.5).rgbString(),
+			borderColor: chartColors.blue,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},
+		{	label: 'GAM6',
+			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
@@ -423,17 +477,19 @@ var config = {
 	options: {
 		title: {
 			display: true,
-			text: 'Line chart (hotizontal scroll) sample'
+			text: 'GAM Live Chart'
 		},
 		scales: {
 			xAxes: [{
 				type: 'realtime',
 				realtime: {
 					duration: 20000,
-					refresh: 1000,
+					refresh: 5000,
 					delay: 2000,
 					onRefresh: onRefresh
+					
 				}
+				
 			}],
 			yAxes: [{
 				scaleLabel: {
@@ -450,6 +506,7 @@ var config = {
 			mode: 'nearest',
 			intersect: false
 		}
+		
 	}
 };
 
@@ -464,6 +521,7 @@ document.getElementById('randomizeData').addEventListener('click', function() {
 			dataObj.y = randomScalingFactor();
 		});
 	});
+
 	window.myChart.update();
 });
 
@@ -492,6 +550,42 @@ document.getElementById('removeDataset').addEventListener('click', function() {
 document.getElementById('addData').addEventListener('click', function() {
 	onRefresh(window.myChart);
 	window.myChart.update();
+});
+
+document.getElementById('duration').addEventListener(isIE ? 'change' : 'input', function() {
+	config.options.scales.xAxes[0].realtime.duration = +this.value;
+	window.myChart.update({duration: 0});
+	document.getElementById('durationValue').innerHTML = this.value;
+});
+
+document.getElementById('ttl').addEventListener(isIE ? 'change' : 'input', function() {
+	config.options.scales.xAxes[0].realtime.ttl = +this.value;
+	window.myChart.update({duration: 0});
+	document.getElementById('ttlValue').innerHTML = this.value;
+});
+
+document.getElementById('refresh').addEventListener(isIE ? 'change' : 'input', function() {
+	config.options.scales.xAxes[0].realtime.refresh = +this.value;
+	window.myChart.update({duration: 0});
+	document.getElementById('refreshValue').innerHTML = this.value;
+});
+
+document.getElementById('delay').addEventListener(isIE ? 'change' : 'input', function() {
+	config.options.scales.xAxes[0].realtime.delay = +this.value;
+	window.myChart.update({duration: 0});
+	document.getElementById('delayValue').innerHTML = this.value;
+});
+
+document.getElementById('frameRate').addEventListener(isIE ? 'change' : 'input', function() {
+	config.options.plugins.streaming.frameRate = +this.value;
+	window.myChart.update({duration: 0});
+	document.getElementById('frameRateValue').innerHTML = this.value;
+});
+
+document.getElementById('pause').addEventListener('change', function() {
+	config.options.scales.xAxes[0].realtime.pause = this.checked;
+	window.myChart.update({duration: 0});
+	document.getElementById('pauseValue').innerHTML = this.checked;
 });
 								
                    

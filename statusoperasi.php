@@ -93,14 +93,14 @@ if ($_SESSION['level']=="Visitor") {
 						<canvas id="FluxChart"></canvas>
 
 							
-								<div class = "card-body" style= "display:table">
+								<div class = "Row" style= "display:table">
 			
-						<div class ="card-body" id="gaugeArea" style= "display:table-cell"></div>
-						<div class ="card-body" id="gaugeArea1" style= "display:table-cell"></div>
-						<div class ="card-body" id="gaugeArea2"style= "display:table-cell"></div>
-						<div class ="card-body" id="gaugeArea3"style= "display:table-cell"></div>
-						<div class ="card-body" id="gaugeArea4"style= "display:table-cell"></div>
-						<div class ="card-body" id="gaugeArea5"style= "display:table-cell"></div>
+						<div id="gaugeArea" style= "display:table-cell"></div>
+						<div id="gaugeArea1" style= "display:table-cell"></div>
+						<div id="gaugeArea2"style= "display:table-cell"></div>
+						<div id="gaugeArea3"style= "display:table-cell"></div>
+						<div id="gaugeArea4"style= "display:table-cell"></div>
+						<div id="gaugeArea5"style= "display:table-cell"></div>
 		</div>				
 								</div>		
 <div>
@@ -124,8 +124,8 @@ if ($_SESSION['level']=="Visitor") {
 	</div>
 	<div>
 		<span class="label">refresh:</span>
-		<span id="refreshValue" class="value">1000</span>
-		<span><input type="range" min="50" max="3000" step="50" value="1000" id="refresh" class="control"></span>
+		<span id="refreshValue" class="value">5000</span>
+		<span><input type="range" min="50" max="5000" step="50" value="5000" id="refresh" class="control"></span>
 	</div>
 	<div>
 		<span class="label">delay:</span>
@@ -185,90 +185,163 @@ $(".has-submenu > a").click(function() {
   $(this).next("ul").toggle();
 });
 </script>
+	
 	<script>
-	   $(document).ready(function() {
-      ambiljson();
-    });
-    var baru=new Array();
-	var dataFlux=[[],[]];
-	var dataDaya=[[],[]];
-	var dataSuhu=[[],[]];
-	var charts;
-    function grafik(data){
-        baru=JSON.parse(data);
-        var angka="";
-        for (i=0;i<(baru.length-1);i++){
-			dataFlux[0].push  (baru[i]['Time']);
-dataFlux[1].push  (baru[i]['Flux']);
-dataDaya[0].push  (baru[i]['Time']);
-dataDaya[1].push  (baru[i]['Daya']);
-dataSuhu[0].push  (baru[i]['Time']);
-dataSuhu[1].push  (baru[i]['Suhu']);
-         
-		}
-        
-    
- 	  
-	  setTimeout(function() {ambiljson()}, 1000);
-	  
+	let gauge = document.querySelector('#gaugeArea')
+	let gauge1 = document.querySelector('#gaugeArea1')
+	let gauge2 = document.querySelector('#gaugeArea2')
+	let gauge3 = document.querySelector('#gaugeArea3')
+	let gauge4 = document.querySelector('#gaugeArea4')
+	let gauge5 = document.querySelector('#gaugeArea5')
+	
+
+// Properties of the gauge
+  let gaugeOptions = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM1',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
     }
-    function ambiljson(){
+  let gaugeOptions1 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM2',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
+	  let gaugeOptions2 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM3',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
+	  let gaugeOptions3 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM4',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
+	  let gaugeOptions4 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM5',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
+	  let gaugeOptions5 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM6',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
+// Drawing and updating the chart
+GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
+</script>
+<script type='text/javascript'>
+var coba=new Array();
+	   let waktu = "";
+	let dataLajuAlir=0;
+	let dataDaya=0;
+	let dataSuhu=0;
+    $(document).ready(function() {
+      autotable();
+    });
+   
+    function maketable(data){
+        coba=JSON.parse(data);
+        var nilai="";
+        
+	
+	  for (i=0;i<(coba.length-1);i++){
+	waktu=coba[i]['Time'];
+			dataDaya=coba[i]['Daya'];
+			dataLajuAlir=coba[i]['Laju Alir'];
+			dataSuhu=coba[i]['Suhu'];
+
+}
+ 
+	  setTimeout(function() {autotable()},5000);
+	
+          }
+    function autotable(){
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        grafik(this.responseText);
+        maketable(this.responseText);
         }
       };
       xhttp.open("GET", "statusoperasijsonlimit.php", true);
       xhttp.send();
     }
+   
+
     </script>
-									<script>								
-
-
-var ctx = document.getElementById('FluxChart').getContext('2d');
-
-var chart = new Chart(ctx, {
-
-  type: 'line',
-
-  data: {
-
-    datasets: [{
-
-      data: dataFlux[1]
-
-    }, {
-
-      data: dataDaya[1]
-
-    }]
-
-  },
-
-  options: {
-
-    scales: {
-
-      xAxes: [{
-
-        type: 'realtime'
-
-      }]
-
-    }
-
-  }
-
-});
-
-								
-                   </script>
-				   
-				   <script>
-				   var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.userAgent.indexOf('Trident') !== -1;
-
-var chartColors = {
+	<script>
+	var chartColors = {
 	red: 'rgb(255, 99, 132)',
 	orange: 'rgb(255, 159, 64)',
 	yellow: 'rgb(255, 205, 86)',
@@ -281,22 +354,40 @@ var chartColors = {
 function randomScalingFactor() {
 	return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
 }
-
 function onRefresh(chart) {
-	chart.config.data.datasets.forEach(function(dataset) {
-		dataset.data.push({
-			x: Date.now(),
-			y: randomScalingFactor()
+	let meme = chart.config.data.datasets;
+		meme[0].data.push({
+			x: waktu,
+			y: dataDaya
 		});
-	});
+		meme[1].data.push({
+			x: waktu,
+			y: dataLajuAlir
+		});
+		meme[2].data.push({
+			x: waktu,
+			y: dataSuhu
+		});
+		
+		chart.update({
+                                    preservation: true
+                                });
+		
+	//chart.config.data.datasets.forEach(function(dataset) {
+		//dataset.data.push({
+		//	x: Date.now(),
+			//y: randomScalingFactor()
+		//});
+	//});
 }
+		var isIE = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.userAgent.indexOf('Trident') !== -1;
 
 var color = Chart.helpers.color;
 var config = {
 	type: 'line',
 	data: {
 		datasets: [{
-			label: 'Dataset 1 (linear interpolation)',
+			label: 'Daya',
 			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
 			borderColor: chartColors.red,
 			fill: false,
@@ -304,8 +395,15 @@ var config = {
 			borderDash: [8, 4],
 			data: []
 		}, {
-			label: 'Dataset 2 (cubic interpolation)',
-			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+			label: 'Laju Alir',
+			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
+			borderColor: chartColors.blue,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},
+		{	label: 'Suhu',
+			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
@@ -315,23 +413,21 @@ var config = {
 	options: {
 		title: {
 			display: true,
-			text: 'Interactions sample'
+			text: 'Status Operasi'
 		},
 		scales: {
 			xAxes: [{
 				type: 'realtime',
 				realtime: {
 					duration: 20000,
-					ttl: 60000,
-					refresh: 1000,
+					refresh: 5000,
 					delay: 2000,
-					pause: false,
 					onRefresh: onRefresh
+					
 				}
+				
 			}],
 			yAxes: [{
-				type: 'linear',
-				display: true,
 				scaleLabel: {
 					display: true,
 					labelString: 'value'
@@ -345,12 +441,8 @@ var config = {
 		hover: {
 			mode: 'nearest',
 			intersect: false
-		},
-		plugins: {
-			streaming: {
-				frameRate: 30
-			}
 		}
+		
 	}
 };
 
@@ -431,7 +523,11 @@ document.getElementById('pause').addEventListener('change', function() {
 	window.myChart.update({duration: 0});
 	document.getElementById('pauseValue').innerHTML = this.checked;
 });
-
+								
+                   
+				   
+				   
+				 
 </script>
 
 </body>
