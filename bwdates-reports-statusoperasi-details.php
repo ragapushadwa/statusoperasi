@@ -97,7 +97,7 @@ echo "{";
     echo '"Laju Alir":' . $row['Suhu'] . ',';
 	echo '"Daya":' . $row['Daya'] . ',';
 
-	echo '"Suhu":' . $row['Laju Alir']  ;
+	echo '"Suhu":' . $row['LajuAlir']  ;
     echo "},";
 $cnt=$cnt+1;}
 echo "{}];",
@@ -119,8 +119,9 @@ echo "{}];",
                   
               
               <th>Daya</th>
-              <th>Suhu</th>
+              
               <th>Laju Alir</th>
+              <th>Suhu</th>
 			  <th>Waktu</th>
 			  
                    
@@ -141,8 +142,9 @@ while ($row=mysqli_fetch_array($ret)) {
 
                   
                 <td><?php  echo $row['Daya'];?></td>
-				<td><?php  echo $row['Suhu'];?></td>
-                <td><?php  echo $row['Laju Alir'];?></td>
+				
+                <td><?php  echo $row['LajuAlir'];?></td>
+                <td><?php  echo $row['Suhu'];?></td>
 				<td><?php  echo $row['reading_time'];?></td>
                 
                 </tr>
@@ -158,8 +160,9 @@ $cnt=$cnt+1;
 <th>ID</th>
 
 <th>Daya</th>
-<th>Suhu</th>
 <th>Laju Alir</th>
+<th>Suhu</th>
+
 <th>Waktu</th>
 </tr>
 </tfoot>
@@ -295,7 +298,7 @@ for (i=0;i<(lists.length-1);i++){
 	console.log(lists);
 	
 lists2[0].push  (lists[i]['Time']);
-lists2[1].push  (lists[i]['LajuAlir']);
+lists2[1].push  (lists[i]['Laju Alir']);
 lists3[0].push  (lists[i]['Time']);
 lists3[1].push  (lists[i]['Daya']);
 lists4[0].push  (lists[i]['Time']);
