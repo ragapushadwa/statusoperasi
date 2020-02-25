@@ -106,8 +106,8 @@ if ($_SESSION['level']=="Visitor") {
 	</div>
 	<div>
 		<span class="label">refresh:</span>
-		<span id="refreshValue" class="value">5000</span>
-		<span><input type="range" min="50" max="5000" step="50" value="5000" id="refresh" class="control"></span>
+		<span id="refreshValue" class="value">2000</span>
+		<span><input type="range" min="50" max="3000" step="50" value="2000" id="refresh" class="control"></span>
 	</div>
 	<div>
 		<span class="label">delay:</span>
@@ -260,19 +260,19 @@ var config = {
 			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
 			borderColor: chartColors.red,
 			fill: false,
-			lineTension: 0,
-			borderDash: [8, 4],
+			cubicInterpolationMode: 'monotone',
+			
 			data: []
 		}, {
 			label: 'Laju Alir',
 			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			borderColor: chartColors.orange,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
 		{	label: 'Suhu',
-			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
+			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,
 			cubicInterpolationMode: 'monotone',

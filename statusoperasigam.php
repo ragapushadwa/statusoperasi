@@ -124,8 +124,8 @@ if ($_SESSION['level']=="Visitor") {
 	</div>
 	<div>
 		<span class="label">refresh:</span>
-		<span id="refreshValue" class="value">5000</span>
-		<span><input type="range" min="50" max="5000" step="50" value="5000" id="refresh" class="control"></span>
+		<span id="refreshValue" class="value">2000</span>
+		<span><input type="range" min="50" max="3000" step="50" value="2000" id="refresh" class="control"></span>
 	</div>
 	<div>
 		<span class="label">delay:</span>
@@ -449,7 +449,7 @@ var config = {
 		}, {
 			label: 'GAM2',
 			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			borderColor: chartColors.orange,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
@@ -457,7 +457,7 @@ var config = {
 
 			label: 'GAM3',
 			backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			borderColor: chartColors.green,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
@@ -472,14 +472,14 @@ var config = {
 		{
 			label: 'GAM5',
 			backgroundColor: color(chartColors.purple).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			borderColor: chartColors.purple,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
 		{	label: 'GAM6',
 			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
-			borderColor: chartColors.blue,
+			borderColor: chartColors.yellow,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
@@ -495,7 +495,7 @@ var config = {
 				type: 'realtime',
 				realtime: {
 					duration: 20000,
-					refresh: 5000,
+					refresh: 2000,
 					delay: 2000,
 					onRefresh: onRefresh
 					
