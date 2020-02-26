@@ -167,9 +167,17 @@ while ($row=mysqli_fetch_array($ret)) {
    </div>
     </div>
     <script>
-$(".has-submenu ul").hide();
-$(".has-submenu > a").click(function() {
-  $(this).next("ul").toggle();
+document.querySelector(".has-submenu ul").style.display="none";
+document.querySelector(".has-submenu").addEventListener("click",(event)=>{
+    let anak = document.querySelector(".has-submenu").children;
+    if (anak[1].style.display=="none"){
+        anak[1].style.display="block";  
+    }
+   else {
+    anak[1].style.display="none"; 
+   }
+   
+
 });
 </script>
     <!-- Jquery JS-->
