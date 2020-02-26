@@ -22,7 +22,7 @@ $password=md5($_POST['password']);
 $level=$_POST['level'];
 
 
- $query=mysqli_query($con,"insert into tbladmin(AdminName,UserName,MobileNumber,Email,Password,level) VALUES('$adminname','$username','$mobilenumber,'$email','$password','$level')");
+ $query=mysqli_query($con,"insert into tbladmin(AdminName,UserName,MobileNumber,Email,Password,level) VALUES('$adminname','$username','$mobilenumber','$email','$password','$level')");
 
     if ($query) {
     $msg="Registration Detail has been added.";
