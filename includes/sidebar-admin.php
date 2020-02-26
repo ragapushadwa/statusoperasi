@@ -9,7 +9,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list tree" >
                         <li>
-                            <a href="dashboard.php"  style="color: blue">
+                            <a href="dashboard-admin.php"  style="color: blue">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 

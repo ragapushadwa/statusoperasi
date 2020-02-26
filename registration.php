@@ -76,7 +76,7 @@ $level=$_POST['level'];
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-        <?php include_once('includes/sidebar.php');?>
+        <?php include_once('includes/sidebar-admin.php');?>
    
         <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -158,7 +158,12 @@ $level=$_POST['level'];
                                                     <label for="text-input" class=" form-control-label">Level</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" id="level" name="level" placeholder="Level" class="form-control" required="">
+                                                <select name="level" class="form-control dropdown" required>
+                                            <option value="">Pilih Level</option>
+                                            <option value="Visitor">Visitor</option>
+                                            <option value="User">User</option>
+                                            <option value="Admin">Admin</option>
+                                        </select>
                                                     
                                                 </div>
                                             </div>
