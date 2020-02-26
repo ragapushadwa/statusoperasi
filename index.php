@@ -34,6 +34,12 @@ if (isset($_POST['login']))
             $_SESSION['level'] = "User";
             header('location:dashboard.php');
         }
+        else if ($ret['level'] == 'Admin')
+        {
+
+            $_SESSION['level'] = "Admin";
+            header('location:dashboard-admin.php');
+        }
         else if ($ret['level'] == 'Visitor')
         {
 
