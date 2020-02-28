@@ -340,20 +340,9 @@ $(".has-submenu > a").click(function() {
 </script>
 <script type ='text/javascript'>
 
-document.querySelector(".daya").innerHTML=daya;
-document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
-document.querySelector(".lajualir").innerHTML=lajualir;
-document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
-document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
-document.querySelector(".GAM1").innerHTML=GAM1;
-document.querySelector(".GAM2").innerHTML=GAM2;
-document.querySelector(".GAM3").innerHTML=GAM3;
-document.querySelector(".GAM4").innerHTML=GAM4;
-document.querySelector(".GAM5").innerHTML=GAM5;
-document.querySelector(".GAM6").innerHTML=GAM6;
-document.querySelector(".GAM7").innerHTML=GAM7;
 
-
+</script>
+<script>
 var GAM1 = [];
 var GAM2 = [];
 var GAM3 = [];
@@ -369,6 +358,8 @@ var lajualir2tube = [];
 var lajualir2plat = [];
 
 
+
+function autotable(){
 fetch("statusbkojsonlimit.php")
 .then((res)=>res.json())
 .then((tabel)=>{
@@ -382,6 +373,12 @@ fetch("statusbkojsonlimit.php")
 	lajualir2plat=tabel[i]['Laju Alir Sekunder Plat'];
 	
     
+
+    document.querySelector(".daya").innerHTML=daya;
+document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
+document.querySelector(".lajualir").innerHTML=lajualir;
+document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
+document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
 
 }
 });
@@ -401,16 +398,28 @@ fetch("json.php")
 	GAM6=data[i]['GAM6'];
 	GAM7=data[i]['GAM7'];
 	
-    
+    document.querySelector(".GAM1").innerHTML=GAM1;
+document.querySelector(".GAM2").innerHTML=GAM2;
+document.querySelector(".GAM3").innerHTML=GAM3;
+document.querySelector(".GAM4").innerHTML=GAM4;
+document.querySelector(".GAM5").innerHTML=GAM5;
+document.querySelector(".GAM6").innerHTML=GAM6;
+document.querySelector(".GAM7").innerHTML=GAM7;
 
 }
 });
 
+setTimeout(function() {autotable()},1000);
+
+}
 
 
 </script>
 <script>
 $(document).ready(function() {
+    
+autotable();
+
     $('#gamtabel').DataTable( {
 		"lengthMenu": [[25,50,-1], [25,50,"All"]],  
 	
