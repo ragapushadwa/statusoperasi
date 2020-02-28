@@ -189,7 +189,7 @@ var coba=new Array();
 	waktu=coba[i]['Time'];
 			dataDaya=coba[i]['Daya'];
 			dataLajuAlir=coba[i]['Laju Alir'];
-			dataSuhu=coba[i]['Suhu'];
+			dataSuhu=coba[i]['Suhu Tangki'];
 
 }
  
@@ -203,7 +203,7 @@ var coba=new Array();
         maketable(this.responseText);
         }
       };
-      xhttp.open("GET", "statusoperasijsonlimit.php", true);
+      xhttp.open("GET", "statusbkojsonlimit.php", true);
       xhttp.send();
     }
    
@@ -264,7 +264,7 @@ var config = {
 			
 			data: []
 		}, {
-			label: 'Laju Alir',
+			label: 'Laju Alir Primer',
 			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
 			borderColor: chartColors.orange,
 			fill: false,

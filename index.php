@@ -24,7 +24,7 @@ if (isset($_POST['login']))
     {
 
         console_log($ret['level']);
-        console_log($adminuser);
+        console_log($adminuser); 
         console_log($password);
         console_log($ret);
 
