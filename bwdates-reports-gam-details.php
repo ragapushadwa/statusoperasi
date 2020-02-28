@@ -97,8 +97,8 @@ echo "{";
 	echo '"GAM3":' . $row['GAM3'] . ',';
 	echo '"GAM4":' . $row['GAM4'] . ',';
 	echo '"GAM5":' . $row['GAM5'] . ',';
-	
-	echo '"GAM6":' . $row['GAM6']  ;
+	echo '"GAM6":' . $row['GAM6'] . ',';
+	echo '"GAM7":' . $row['GAM7']  ;
     echo "},";
 $cnt=$cnt+1;}
 echo "{}];",
@@ -121,6 +121,7 @@ echo "{}];",
 			  <th>GAM4</th>
 			  <th>GAM5</th>
 			  <th>GAM6</th>
+              <th>GAM7</th>
 			  <th>Waktu</th>
               
 			  
@@ -146,6 +147,7 @@ while ($row=mysqli_fetch_array($ret)) {
 				  <td><?php  echo $row['GAM4'];?></td>
 				  <td><?php  echo $row['GAM5'];?></td>
 				  <td><?php  echo $row['GAM6'];?></td>
+                  <td><?php  echo $row['GAM7'];?></td>
 				  <td><?php  echo $row['Time'];?></td>
              
                 
@@ -163,6 +165,7 @@ $cnt=$cnt+1;
 <th>GAM4</th>
 <th>GAM5</th>
 <th>GAM6</th>
+<th>GAM7</th>
 <th>Waktu</th>
 </tr>
 </tfoot>
@@ -257,6 +260,7 @@ lineChartData2[0]['values'].push  ('{time: '+lists[0]['Time']+', y: '+lists[0]['
 lineChartData3[0]['values'].push  ('{time: '+lists[0]['Time']+', y: '+lists[0]['GAM4']+'}');
 lineChartData4[0]['values'].push  ('{time: '+lists[0]['Time']+', y: '+lists[0]['GAM5']+'}');
 lineChartData5[0]['values'].push  ('{time: '+lists[0]['Time']+', y: '+lists[0]['GAM6']+'}');
+lineChartData5[0]['values'].push  ('{time: '+lists[0]['Time']+', y: '+lists[0]['GAM7']+'}');
 
 }
 
@@ -270,6 +274,7 @@ var GAM3 = [[],[]];
 var GAM4 = [[],[]];
 var GAM5 = [[],[]];
 var GAM6 = [[],[]];
+var GAM7 = [[],[]];
 
 for (i=0;i<(lists.length-1);i++){
 	console.log(lists);
@@ -286,7 +291,8 @@ GAM5[0].push  (lists[i]['Time']);
 GAM5[1].push  (lists[i]['GAM5']);
 GAM6[0].push  (lists[i]['Time']);
 GAM6[1].push  (lists[i]['GAM6']);
-
+GAM7[0].push  (lists[i]['Time']);
+GAM7[1].push  (lists[i]['GAM7']);
 
 
 }
@@ -341,14 +347,23 @@ var mixedChart = new Chart(ctx, {
 		
             // Changes this dataset to become a line
             type: 'line'
-		},
-	
-		
-		{
-			 backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(255, 99, 132)',
+		},{
+
+        
+        backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: 'rgb(52, 152, 219)',
+
             label: 'GAM6',
             data: GAM6[1],
+		
+            // Changes this dataset to become a line
+            type: 'line'
+		
+		},{
+			 backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: 'rgb(255, 99, 132)',
+            label: 'GAM7',
+            data: GAM7[1],
 			
 
             // Changes this dataset to become a line

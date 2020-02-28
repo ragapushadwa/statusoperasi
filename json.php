@@ -25,8 +25,9 @@
 	echo '"GAM2":' . $row['GAM2'] . ',';
 	echo '"GAM3":' . $row['GAM3'] . ',';
 	echo '"GAM4":' . $row['GAM4'] . ',';
-	echo '"GAM5":' . $row['GAM5'] . ',';
-	echo '"GAM6":' . $row['GAM6']  ;
+    echo '"GAM5":' . $row['GAM5'] . ',';
+    echo '"GAM6":' . $row['GAM6'] . ',';
+	echo '"GAM7":' . $row['GAM7']  ;
     echo "},";
     $No++;
     }

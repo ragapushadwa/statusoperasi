@@ -309,6 +309,7 @@ let waktu="";
       let GAM4=0;
       let GAM5=0;
       let GAM6=0;
+	  let GAM7=0;
 	  var coba=new Array();
     $(document).ready(function() {
       autotable();
@@ -390,6 +391,7 @@ function onRefresh(chart) {
 	GAM4=data[i]['GAM4'];
 	GAM5=data[i]['GAM5'];
 	GAM6=data[i]['GAM6'];
+	GAM7=data[i]['GAM7'];
 	
 	console.log(GAM1)
 	
@@ -420,6 +422,10 @@ function onRefresh(chart) {
 		meme[5].data.push({
 			x: waktu,
 			y: GAM6
+		});
+		meme[6].data.push({
+			x: waktu,
+			y: GAM7
 		});
 		chart.update({
                                     preservation: false
@@ -477,7 +483,15 @@ var config = {
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
-		{	label: 'GAM6',
+		{
+			label: 'GAM6',
+			backgroundColor: color(chartColors.purple).alpha(0.5).rgbString(),
+			borderColor: chartColors.purple,
+			fill: false,
+			cubicInterpolationMode: 'monotone',
+			data: []
+		},
+		{	label: 'GAM7',
 			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
 			borderColor: chartColors.yellow,
 			fill: false,

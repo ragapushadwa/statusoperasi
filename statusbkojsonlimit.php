@@ -1,4 +1,4 @@
-    <?php
+<?php
     include('includes/dbconnection.php');
 	
 
@@ -29,9 +29,11 @@
     
     echo '"Daya":' . $row['Daya'] . ',';
     echo '"Laju Alir":' . $row['LajuAlir'] . ',';
-    
-
-	echo '"Suhu":' . $row['Suhu']  ;
+    echo '"Laju Alir Sekunder Tube":' . $row['LajuAlir2Tube'] . ',';
+    echo '"Laju Alir Sekunder Plat":' . $row['LajuAlir2Plat'] . ',';
+    echo '"Suhu Bahan Bakar":' . $row['Suhubahanbakar'] . ',';
+  
+	echo '"Suhu Tangki":' . $row['Suhu']  ;
     echo "},";
     $No++;
     }

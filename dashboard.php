@@ -176,7 +176,8 @@ $count_total_visitors=mysqli_num_rows($query3);
 						<div class="col-sm-6 col-lg-3" id="gaugeArea3"style= "display:table-cell"><br/></div>
 						<div class="col-sm-6 col-lg-3"  id="gaugeArea4"style= "display:table-cell"><br/></div>
 						<div class="col-sm-6 col-lg-3" id="gaugeArea5"style= "display:table-cell"><br/></div>
-		</div>				
+                        <div class="col-sm-6 col-lg-3" id="gaugeArea6"style= "display:table-cell"><br/></div>
+		                    </div>				
 						
 						
 						<div class= 'isitabel'></div>
@@ -233,6 +234,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	let gauge3 = document.querySelector('#gaugeArea3')
 	let gauge4 = document.querySelector('#gaugeArea4')
 	let gauge5 = document.querySelector('#gaugeArea5')
+    let gauge6 = document.querySelector('#gaugeArea6')
 	
 
 // Properties of the gauge
@@ -338,6 +340,23 @@ $count_total_visitors=mysqli_num_rows($query3);
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
     }
+    let gaugeOptions6 = {
+	    hasNeedle: true,
+	    needleColor: 'black',
+      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcDelimiters: [10, 60],
+      arcPadding: 6,
+      arcPaddingColor: 'none',
+      arcLabels: ['35', '210', '315'],
+      arcLabelFontSize: false,
+      //arcOverEffect: false,
+      // label options
+      rangeLabel: ['0', '350'],
+      centralLabel: 'GAM7',
+      rangeLabelFontSize: false,
+      labelsFont: 'Consolas',
+	  needleUpdateSpeed: 0,
+    }
 // Drawing and updating the chart
 GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 </script>
@@ -357,6 +376,7 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 		document.getElementById('gaugeArea3').innerHTML = '';
 		document.getElementById('gaugeArea4').innerHTML = '';
 		document.getElementById('gaugeArea5').innerHTML = '';
+        document.getElementById('gaugeArea6').innerHTML = '';
 		
 	  GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(coba[0]["GAM1"]);
 	  GaugeChart.gaugeChart(gauge1, 300, gaugeOptions1).updateNeedle(coba[0]["GAM2"]);
@@ -364,6 +384,7 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 	  GaugeChart.gaugeChart(gauge3, 300, gaugeOptions3).updateNeedle(coba[0]["GAM4"]);
 	  GaugeChart.gaugeChart(gauge4, 300, gaugeOptions4).updateNeedle(coba[0]["GAM5"]);
 	  GaugeChart.gaugeChart(gauge5, 300, gaugeOptions5).updateNeedle(coba[0]["GAM6"]);
+      GaugeChart.gaugeChart(gauge6, 300, gaugeOptions6).updateNeedle(coba[0]["GAM7"]);
 		}
         $('.isitabel').html('<tr><th class="table_titles">No</th><th class="table_titles">Time</th><th class="table_titles">GAM1</th><th class="table_titles">GAM2</th><th class="table_titles">GAM3</th><th class="table_titles">GAM4</th><th class="table_titles">GAM5</th><th class="table_titles">GAM6</th></tr>'+nilai);
       
