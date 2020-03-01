@@ -180,7 +180,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 		                    </div>				
 						
 						
-						<div class= 'isitabel'></div>
+						
 					
 								</div>
 								

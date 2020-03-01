@@ -188,7 +188,7 @@ if ($_SESSION['level']=="Visitor") {
 <th>Laju Paparan Thermal Column</th>
         <th></th>
         <th></th>
-        <th>≤2,5mR</th>
+        <th>≤2,5mR/jam</th>
         <th class= "GAM1"></th>
 </tr>
 <tr>
@@ -197,7 +197,7 @@ if ($_SESSION['level']=="Visitor") {
 <th>Laju Paparan Dek Reaktor</th>
         <th></th>
         <th></th>
-        <th>≤10mR</th>
+        <th>≤10mR/jam</th>
         <th class= "GAM2"></th>
 </tr>
 <tr>
@@ -206,7 +206,7 @@ if ($_SESSION['level']=="Visitor") {
 <th>Laju Paparan Permukaan Air Tangki</th>
         <th></th>
         <th></th>
-        <th>≤100mR</th>
+        <th>≤100mR/jam</th>
         <th class= "GAM3"></th>
 </tr>
 <tr>
@@ -407,12 +407,12 @@ else {
     document.querySelector(".lajualir2plat").style.color = '#666';
 }    
 
-    document.querySelector(".daya").innerHTML=daya;
-    document.querySelector(".suhutangki").innerHTML=suhubahanbakar;
-document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
-document.querySelector(".lajualir").innerHTML=lajualir;
-document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
-document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
+document.querySelector(".daya").innerHTML=daya+" "+"kW";
+document.querySelector(".suhutangki").innerHTML=suhubahanbakar+" "+"℃";
+document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar+" "+"℃";
+document.querySelector(".lajualir").innerHTML=lajualir+" "+"lpm";
+document.querySelector(".lajualir2tube").innerHTML=lajualir2tube+" "+"lpm";
+document.querySelector(".lajualir2plat").innerHTML=lajualir2plat +" "+"lpm";
 
 
 
@@ -434,13 +434,13 @@ fetch("json.php")
 	GAM6=data[i]['GAM6'];
 	GAM7=data[i]['GAM7'];
 	
-    document.querySelector(".GAM1").innerHTML=GAM1;
-document.querySelector(".GAM2").innerHTML=GAM2;
-document.querySelector(".GAM3").innerHTML=GAM3;
-document.querySelector(".GAM4").innerHTML=GAM4;
-document.querySelector(".GAM5").innerHTML=GAM5;
-document.querySelector(".GAM6").innerHTML=GAM6;
-document.querySelector(".GAM7").innerHTML=GAM7;
+    document.querySelector(".GAM1").innerHTML=GAM1+" "+"mR/jam";
+document.querySelector(".GAM2").innerHTML=GAM2+" "+"mR/jam";
+document.querySelector(".GAM3").innerHTML=GAM3+" "+"mR/jam";
+document.querySelector(".GAM4").innerHTML=GAM4+" "+"mR/jam";
+document.querySelector(".GAM5").innerHTML=GAM5+" "+"mR/jam";
+document.querySelector(".GAM6").innerHTML=GAM6+" "+"mR/jam";
+document.querySelector(".GAM7").innerHTML=GAM7+" "+"mR/jam";
 
 }
 });
@@ -460,9 +460,9 @@ autotable();
     $('#gamtabel').DataTable( {
 		"lengthMenu": [[25,50,-1], [25,50,"All"]],  
 	
-        dom: 'Bfrit',
+        dom: 'B',
 		
-        buttons: ['pageLength','excel', 'csv','copy','pdf' ]
+        buttons: ['excel', 'csv','copy','pdf' ]
 		
 		
 		
