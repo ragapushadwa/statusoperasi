@@ -263,18 +263,7 @@ if ($_SESSION['level']=="Visitor") {
                           
                         </div>
 						
-						<div class ="col-lg7 col-xl-8">
-						<div class = "card-body">
-						<div class = "chart-area">
-						
-						<canvas id="GamChart" width="670" height="500" style="display: block; width: 564px; height: 320px;"></canvas>
-
-
-								</canvas>
-								</div>
-								
-								</div>
-								</div>
+    
                         
                         
           
@@ -380,6 +369,8 @@ document.querySelector(".lajualir").innerHTML=lajualir;
 document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
 document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
 
+
+
 }
 });
 fetch("json.php")
@@ -415,6 +406,12 @@ setTimeout(function() {autotable()},1000);
 
 
 </script>
+<script>
+    if ( document.querySelector(".daya")>"110")
+{
+    document.querySelector(".daya").style.color = 'red';
+}
+    </script>
 <script>
 $(document).ready(function() {
     

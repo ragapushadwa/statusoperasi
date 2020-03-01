@@ -4,7 +4,7 @@ import random
 import time
 
 while True:
-    Daya= str(random.randrange(100))
+    Daya= str(random.randrange(109,112))
     LajuAlir= str(random.randrange(100))
     Suhu= str(random.randrange(100))
     Suhubahanbakar= str(random.randrange(100))
