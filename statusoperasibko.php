@@ -349,6 +349,7 @@ var lajualir2plat = [];
 
 
 function autotable(){
+
 fetch("statusbkojsonlimit.php")
 .then((res)=>res.json())
 .then((tabel)=>{
@@ -368,7 +369,13 @@ document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
 document.querySelector(".lajualir").innerHTML=lajualir;
 document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
 document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
-
+if (parseInt(daya)>109)
+{
+    document.querySelector(".daya").style.color = 'red';
+}
+else {
+    document.querySelector(".daya").style.color = '#666';
+}
 
 
 }
@@ -406,12 +413,7 @@ setTimeout(function() {autotable()},1000);
 
 
 </script>
-<script>
-    if ( document.querySelector(".daya")>"110")
-{
-    document.querySelector(".daya").style.color = 'red';
-}
-    </script>
+
 <script>
 $(document).ready(function() {
     
