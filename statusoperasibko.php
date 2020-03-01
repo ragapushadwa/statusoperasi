@@ -362,20 +362,58 @@ fetch("statusbkojsonlimit.php")
 	lajualir2tube=tabel[i]['Laju Alir Sekunder Tube'];
 	lajualir2plat=tabel[i]['Laju Alir Sekunder Plat'];
 	
-    
-
-    document.querySelector(".daya").innerHTML=daya;
-document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
-document.querySelector(".lajualir").innerHTML=lajualir;
-document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
-document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
-if (parseInt(daya)>109)
+    if (parseInt(daya)>109)
 {
     document.querySelector(".daya").style.color = 'red';
 }
 else {
     document.querySelector(".daya").style.color = '#666';
+};
+
+if (parseInt(suhutangki)>109)
+{
+    document.querySelector(".suhutangki").style.color = 'red';
 }
+else {
+    document.querySelector(".suhutangki").style.color = '#666';
+}
+
+if (parseInt(suhubahanbakar)>700)
+{
+    document.querySelector(".suhubahanbakar").style.color = 'red';
+}
+else {
+    document.querySelector(".suhubahanbakar").style.color = '#666';
+}
+if (parseInt(lajualir)>138)
+{
+    document.querySelector(".lajualir").style.color = 'red';
+}
+else {
+    document.querySelector(".lajualir").style.color = '#666';
+}
+if (parseInt(lajualir2tube)>820)
+{
+    document.querySelector(".lajualir2tube").style.color = 'red';
+}
+else {
+    document.querySelector(".lajualir2tube").style.color = '#666';
+}
+if (parseInt(lajualir2plat)>520)
+{
+    document.querySelector(".lajualir2plat").style.color = 'red';
+}
+else {
+    document.querySelector(".lajualir2plat").style.color = '#666';
+}    
+
+    document.querySelector(".daya").innerHTML=daya;
+    document.querySelector(".suhutangki").innerHTML=suhubahanbakar;
+document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar;
+document.querySelector(".lajualir").innerHTML=lajualir;
+document.querySelector(".lajualir2tube").innerHTML=lajualir2tube;
+document.querySelector(".lajualir2plat").innerHTML=lajualir2plat;
+
 
 
 }
