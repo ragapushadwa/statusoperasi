@@ -48,6 +48,9 @@ if ($_SESSION['level']==Visitor) {
 	.visitor {
 		display:none
 	}
+    .pegawai {
+		display:none
+	}
 		.statusoperasi {
 		display:none
 	}
@@ -92,7 +95,7 @@ if ($_SESSION['level']==Visitor) {
                                         <select name="level" class="form-control dropdown" required>
                                             <option value="">Pilih Report</option>
                                             <option value="1">Visitor</option>
-                                            <option value="2">Pegawai</option>
+                                            <option value="2">Status Operasi</option>
                                             <option value="3">GAM</option>
                                         </select>
 										</div>
@@ -151,6 +154,65 @@ if ($_SESSION['level']==Visitor) {
                                     </div>
                                    
                                 </div>
+
+                                <div class="card pegawai">
+                                    <div id ="pegawai" class="card-header">
+                                        <strong>Pegawai</strong>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form method="post" enctype="multipart/form-data" class="form-horizontal" name="bwdatesreport" action="bwdates-reports-pegawai-details.php">
+                                            <p style="font-size:16px; color:red" align="center"> <?php if($msg){
+    echo $msg;
+  }  ?> </p>
+
+   
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">From Date</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="date" id="fromdate" name="fromdate" value="" class="form-control" required="">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">To Date</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="date" id="todate" name="todate" value="" class="form-control" required="">
+                                                    
+                                                </div>
+                                                <div class="form-group">
+
+<select name="waktu" class="form-control droppegawai" >
+    <option value="">Pilih Report</option>
+    <option value="1">Hari Ini</option>
+    <option value="2">Sepekan Terakhir</option>
+    <option value="3">Sebulan Terakhir</option>
+    <option value="4">3 Bulan Terakhir</option>
+    <option value="5">6 Bulan Terakhir</option>
+    <option value="6">1 Tahun Terakhir</option>
+    
+    
+</select>
+</div>
+                                            </div>
+                                            
+                                                                                        
+                                            
+                                          <div class="card-footer">
+                                        <p style="text-align: center;"><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit
+                                        </button></p>
+                                        
+                                    </div>
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                                
+                                   
+                                
 								                                <div id="statusoperasi" class="card statusoperasi">                        <div class="card-header">
                                         <strong>Status Operasi</strong>
                                     </div>
@@ -278,6 +340,7 @@ if ($_SESSION['level']==Visitor) {
 <script>
 	const selectElement = document.querySelector('.dropdown');
     const waktutanggal = document.querySelector('.dropvisitor');
+    const waktupegawai = document.querySelector('.droppegawai');
     const waktustatus = document.querySelector('.dropstatusoperasi');
     const waktugam = document.querySelector('.dropgam')
     var today = new Date();
@@ -490,12 +553,14 @@ selectElement.addEventListener('change', (event) => {
   const GAM = $('.GAM');
   if (event.target.value == 1 ) {
 	  visitor.show(1000);
+      pegawai.hide();
 	  statusoperasi.hide();
 	  GAM.hide(); 	  
   }
  
   else if (event.target.value == 2){
 	  visitor.hide();
+      pegawai.hide();
 	  statusoperasi.show(1000);
 	  GAM.hide();
   }
@@ -503,8 +568,16 @@ selectElement.addEventListener('change', (event) => {
 	  visitor.hide();
 	  statusoperasi.hide();
 	  GAM.show(1000);
+      pegawai.hide();
+  }
+  else if (event.target.value==4){
+	  visitor.hide();
+	  statusoperasi.hide();
+	  GAM.hide();
+      pegawai.show(1000);
   }
 });
+
 document.querySelector(".has-submenu ul").style.display="none";
 document.querySelector(".has-submenu").addEventListener("click",(event)=>{
     let anak = document.querySelector(".has-submenu").children;
