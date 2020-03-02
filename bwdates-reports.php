@@ -92,7 +92,7 @@ if ($_SESSION['level']==Visitor) {
                                         <select name="level" class="form-control dropdown" required>
                                             <option value="">Pilih Report</option>
                                             <option value="1">Visitor</option>
-                                            <option value="2">Status Operasi</option>
+                                            <option value="2">Pegawai</option>
                                             <option value="3">GAM</option>
                                         </select>
 										</div>
@@ -438,6 +438,7 @@ console.log(sebulan);
   
     }
     );
+    
     waktustatus.addEventListener('change', (event) => {
         if (event.target.value == 1 ) {
             $.redirect('bwdates-reports-statusoperasi-details.php', {'fromdate': hari ,'todate': hari});
@@ -484,6 +485,7 @@ console.log(sebulan);
     );
 selectElement.addEventListener('change', (event) => {
   const visitor = $('.visitor');
+  const pegawai = $('.pegawai');
   const statusoperasi = $('.statusoperasi');
   const GAM = $('.GAM');
   if (event.target.value == 1 ) {
@@ -491,6 +493,7 @@ selectElement.addEventListener('change', (event) => {
 	  statusoperasi.hide();
 	  GAM.hide(); 	  
   }
+ 
   else if (event.target.value == 2){
 	  visitor.hide();
 	  statusoperasi.show(1000);
@@ -515,13 +518,7 @@ document.querySelector(".has-submenu").addEventListener("click",(event)=>{
 
 });
 	</script>
-<<<<<<< HEAD
     
-=======
-    <script>
-
-</script>
->>>>>>> d549c9713d9afbac66e05fa8dc5f38e018e289f7
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap JS-->
