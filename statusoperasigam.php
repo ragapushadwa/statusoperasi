@@ -93,7 +93,7 @@ if ($_SESSION['level']=="Visitor") {
 						<canvas id="FluxChart"></canvas>
 
 							
-								<div class = "Row" style= "display:table">
+						<!--	<div class = "Row" style= "display:table">
 			
 						<div id="gaugeArea" style= "display:table-cell"></div>
 						<div id="gaugeArea1" style= "display:table-cell"></div>
@@ -101,7 +101,7 @@ if ($_SESSION['level']=="Visitor") {
 						<div id="gaugeArea3"style= "display:table-cell"></div>
 						<div id="gaugeArea4"style= "display:table-cell"></div>
 						<div id="gaugeArea5"style= "display:table-cell"></div>
-		</div>				
+		</div>		-->		
 								</div>		
 <div>
 		<canvas id="myChart"></canvas>
@@ -477,8 +477,8 @@ var config = {
 		},
 		{
 			label: 'GAM5',
-			backgroundColor: color(chartColors.purple).alpha(0.5).rgbString(),
-			borderColor: chartColors.purple,
+			backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
+			borderColor: chartColors.grey,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
