@@ -460,7 +460,7 @@ autotable();
     $('#gamtabel').DataTable( {
 		"lengthMenu": [[25,50,-1], [25,50,"All"]],  
 	
-        dom: 'B',
+        dom: '',
 		
         buttons: ['excel', 'csv','copy','pdf' ]
 		
