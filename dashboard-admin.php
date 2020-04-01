@@ -70,6 +70,8 @@ if ($_SESSION['level']=="Visitor") {
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+
+                    
  <?php
 //todays visitors
  $query=mysqli_query($con,"select ID from tblvisitor where date(EnterDate)=CURDATE();");

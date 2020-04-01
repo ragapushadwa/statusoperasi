@@ -351,7 +351,7 @@ var lajualir2plat = [];
 function autotable(){
 
 fetch("statusbkojsonlimit.php")
-.then((res)=>res.json())
+.then((res) =>res.json())
 .then((tabel)=>{
 	for (i=0;i<(tabel.length-1);i++){
 	

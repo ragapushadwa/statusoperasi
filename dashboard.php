@@ -70,6 +70,24 @@ if ($_SESSION['level']=="Visitor") {
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+
+                    
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Status</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="status"  value="" readonly class="status" >
+                                                    
+                                                </div>
+
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Daya</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="daya"   value="" readonly class="daya">
+                                                    
+                                                </div>
+                                            
  <?php
 //todays visitors
  $query=mysqli_query($con,"select ID from tblvisitor where date(EnterDate)=CURDATE();");
@@ -363,6 +381,7 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
 <script type='text/javascript'>
     $(document).ready(function() {
       autotable();
+      tabelotomatis();
     });
     var coba=new Array();
     function maketable(data){
@@ -409,6 +428,46 @@ $(".has-submenu ul").hide();
 $(".has-submenu > a").click(function() {
   $(this).next("ul").toggle();
 });
+</script>
+<script>
+
+var daya = [];
+
+
+
+
+function tabelotomatis(){
+
+fetch("statusbkojsonlimit.php")
+.then((res) =>res.json())
+.then((tabel)=>{
+	for (i=0;i<(tabel.length-1);i++){
+	
+	daya=tabel[i]['Daya'];
+
+    if (parseInt(daya)>109)
+{
+    document.querySelector("#daya").style.color = 'red';
+}
+else {
+    document.querySelector("#daya").style.color = '#666';
+};
+
+
+document.querySelector("#daya").value=daya+" "+"kW";
+
+
+
+
+}
+});
+
+
+setTimeout(function() {tabelotomatis()},1000);
+
+}
+
+
 </script>
 
 </body>
