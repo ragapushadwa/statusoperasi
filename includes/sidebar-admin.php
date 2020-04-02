@@ -23,10 +23,7 @@
                                 <i class="fa fa-users"></i>Manage Pegawai</a>
                         </li>
                      
- <li>
-                            <a href="statusoperasi.php"  style="color: blue">
-                                <i class="fa fa-line-chart"></i>Status Operasi</a>
-                        </li>
+ 
                         
                       <li>
                             <a href="bwdates-reports.php"  style="color: blue">

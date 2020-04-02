@@ -100,7 +100,7 @@ $query=mysqli_query($con,"update tblpegawai set remark='$remark' where  ID='$eid
 
   <?php
  $eid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from  tblpegawai where ID='$eid'");
+$ret=mysqli_query($con,"select * from  tblvisitor where ID='$eid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 	?>
@@ -110,18 +110,26 @@ while ($row=mysqli_fetch_array($ret)) {
     <td><?php  echo $row['FullName'];?></td>
   </tr>
    <tr>
-    <th>Posisi</th>
-    <td><?php  echo $row['Posisi'];?></td>
+    <th>Kategori</th>
+    <td><?php  echo $row['Jenis'];?></td>
   </tr>
-
+  <tr>
+    <th>Mobile Number</th>
+    <td><?php  echo $row['MobileNumber'];?></td>
+  </tr>
+  <tr>
+    <th>Alamat</th>
+    <td><?php  echo $row['Address'];?></td>
+  </tr>
+  <tr>
+    <th>Keperluan</th>
+    <td><?php  echo $row['Keperluan'];?></td>
+  </tr>
   <tr>
     <th>Check In</th>
     <td><?php  echo $row['EnterDate'];?></td>
   </tr>
-  <tr>
-    <th>Check Out</th>
-    <td><?php  echo $row['outtime'];?></td>
-  </tr>
+
 
 
 <?php if($row['remark']==""){ ?>
@@ -137,14 +145,11 @@ while ($row=mysqli_fetch_array($ret)) {
                                         </form>
                <?php } else { ?>
 
-<tr>
-    <th>Outing Remark </th>
-    <td><?php echo $row['remark']; ?></td>
-  </tr>
+
 
 
 <tr>
-<th>Out Time</th>
+<th>Check Out</th>
 <td><?php echo $row['outtime']; ?>  </td> 
 <?php } ?>
 </tr>

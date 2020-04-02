@@ -95,6 +95,7 @@ if ($_SESSION['level']==Visitor) {
                                         <select name="level" class="form-control dropdown" required>
                                             <option value="">Pilih Report</option>
                                             <option value="1">Visitor</option>
+                                            <option value="4">Pegawai</option>
                                             <option value="2">Status Operasi</option>
                                             <option value="3">GAM</option>
                                         </select>
@@ -501,6 +502,29 @@ console.log(sebulan);
   
     }
     );
+    waktupegawai.addEventListener('change', (event) => {
+        if (event.target.value == 1 ) {
+            $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': hari ,'todate': hari});
+  }
+  else if (event.target.value == 2){
+    $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': lastweek ,'todate': hari });  
+  }
+  else if (event.target.value == 3){
+    $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': sebulan ,'todate': hari });  
+  }
+  else if (event.target.value == 4){
+    $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': tigabulan ,'todate': hari });  
+  }
+  else if (event.target.value == 5){
+    $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': enambulan ,'todate': hari });  
+  }
+   else if(event.target.value==6)
+    $.redirect('bwdates-reports-pegawai-details.php', {'fromdate': satutahun ,'todate': hari });  
+   
+  
+    }
+    );
+
     
     waktustatus.addEventListener('change', (event) => {
         if (event.target.value == 1 ) {

@@ -22,7 +22,7 @@ if (($_SESSION['level']=="Visitor")) {
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Pegawai CheckIn/Out</title>
+    <title>Pegawai Check In/Out</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -90,7 +90,7 @@ if (($_SESSION['level']=="Visitor")) {
                                         </tr>
                                         </thead>
                                        <?php
-$ret=mysqli_query($con,"select *from tblpegawai where DATE(EnterDate)=CURDATE()");
+$ret=mysqli_query($con,"select *from tblpegawai where DATE(EnterDate)=CURDATE() && outtime IS NULL ");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -100,7 +100,7 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php echo $cnt;?></td>
             
                   <td><?php  echo $row['FullName'];?></td>
-                  <td><?php  echo $row['Posisi'];?></td>
+                  <td><?php  echo $row['Jenis'];?></td>
               			
 				
 				<td><?php  echo $row['EnterDate'];?></td>

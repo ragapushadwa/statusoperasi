@@ -14,7 +14,7 @@ $cvmsaid=$_SESSION['cvmsaid'];
 $Posisi=$_POST['Posisi'];
 
 
- $query=mysqli_query($con,"insert into tblpegawai(FullName,Posisi) value('$fullname','$Posisi')");
+ $query=mysqli_query($con,"insert into tblpegawai(FullName,Jenis) value('$fullname','$Posisi')");
 
     if ($query) {
     $msg="Visitors Detail has been added.";
@@ -108,7 +108,17 @@ $Posisi=$_POST['Posisi'];
                                                     <label for="text-input" class=" form-control-label">Posisi</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <input type="text" name="Posisi" id="Posisi"  placeholder="" class="form-control" required=""></textarea>
+                                               
+                                                <select name="Posisi" class="form-control dropkategori" id="kategori" >
+    <option value="">Pilih </option>"
+    <option value="Operator">Operator</option>
+    <option value="PPR">PPR</option>
+    <option value="Lainnya">Lainnya</option>
+    
+    
+    
+</select>
+                                                    
                                                 </div>
                                             </div>
 
