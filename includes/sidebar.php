@@ -15,12 +15,12 @@
 
      <li>
                             <a href="pegawai-form.php"  style="color: blue">
-                                <i class="fa fa-user"></i>Pegawai Check In/Out</a>
+                                <i class="fa fa-user"></i>Pegawai Check In</a>
                         </li>
   
    <li>
                             <a href="manage-newvisitors.php"  style="color: blue">
-                                <i class="fa fa-users"></i>Manage Pegawai</a>
+                                <i class="fa fa-users"></i>Pegawai Check Out</a>
                         </li>
                      
  
