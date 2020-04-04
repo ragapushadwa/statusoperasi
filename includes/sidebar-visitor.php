@@ -14,11 +14,11 @@
      
 <li>
                             <a href="visitor-visitors-form.php"  style="color: blue">
-                                <i class="fa fa-user"></i>Visitor Check In/Out</a>
+                                <i class="fa fa-user"></i>Visitor Check In</a>
                         </li>
    <li>
                             <a href="visitor-manage-newvisitors.php"  style="color: blue">
-                                <i class="fa fa-users"></i>Manage Visitors</a>
+                                <i class="fa fa-users"></i>Visitor Check Out</a>
                         </li>
 
                         

@@ -268,13 +268,13 @@ result = lists.reduce((r, { Time, Labels }) => {
 
 Object.values(result).forEach((a)=>{
   if (typeof a['Operator'] === 'undefined'){
-a['Pelajar']=0;
+a['Operator']=0;
   }
  else if (typeof a['PPR'] === 'undefined'){
-a['Umum']=0;
+a['PPR']=0;
   }
  else if (typeof a['Lainnya'] === 'undefined'){
-a['Mahasiswa']=0;
+a['Lainnya']=0;
   }
 });
 </script>

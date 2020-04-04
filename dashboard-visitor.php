@@ -279,7 +279,43 @@ GaugeChart.gaugeChart(gauge, 300, gaugeOptions).updateNeedle(70)
     }
     </script>
 									
-				   
+<script>
+
+var daya = [];
+
+function tabelotomatis(){
+
+fetch("statusbkojsonlimit.php")
+.then((res) =>res.json())
+.then((tabel)=>{
+	for (i=0;i<(tabel.length-1);i++){
+	
+	daya=tabel[i]['Daya'];
+
+    if (parseInt(daya)>109)
+{
+    document.querySelector("#daya").style.color = 'red';
+}
+else {
+    document.querySelector("#daya").style.color = '#666';
+};
+
+
+document.querySelector("#daya").value=daya+" "+"kW";
+
+
+
+
+}
+});
+
+
+setTimeout(function() {tabelotomatis()},1000);
+
+}
+
+
+</script>		   
 
 </body>
 
