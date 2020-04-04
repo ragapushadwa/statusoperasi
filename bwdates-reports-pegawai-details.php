@@ -266,7 +266,18 @@ result = lists.reduce((r, { Time, Labels }) => {
         return r;
     }, {});
 
-Object.values(result).forEach((a)=>{
+//    if (Object.values(result)=='Operator'){
+  //    Object.values(result)='Operator';
+
+    //}
+    //else if (Object.values(result)=='PPR'){
+      //Object.values(result)='PPR';
+    //}
+    //else {
+      //Object.values(result)='Lainnya';
+    //}
+
+    Object.values(result).forEach((a)=>{
   if (typeof a['Operator'] === 'undefined'){
 a['Operator']=0;
   }

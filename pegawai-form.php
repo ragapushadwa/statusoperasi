@@ -113,6 +113,7 @@ $Posisi=$_POST['Posisi'];
     <option value="">Pilih </option>"
     <option value="Operator">Operator</option>
     <option value="PPR">PPR</option>
+    <option value="Maintenance">Maintenance</option>
     <option value="Lainnya">Lainnya</option>
     
     
