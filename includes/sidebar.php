@@ -22,7 +22,10 @@
                             <a href="manage-newvisitors.php"  style="color: blue">
                                 <i class="fa fa-users"></i>Pegawai Check Out</a>
                         </li>
-                     
+                        <li>
+                            <a href="searchpegawai.php" style="color: blue">
+                                <i class="fa fa-address-book"></i>Search Pegawai</a>
+                        </li>
  
                         
                       <li>
