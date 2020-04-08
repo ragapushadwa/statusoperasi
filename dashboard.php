@@ -187,7 +187,7 @@ $count_total_visitors=mysqli_num_rows($query3);
                         </div>
                         <div class= "gambar">
 						<img src="images/icon/tampakatas.jpeg" style="width:auto ;height:450px;"/><img src="images/icon/nomor.png" style="width:auto ;height:300px;"/>
-                        <h3>Reactor Information System. Raga 2019. All rights reserved.</h3></div>
+                        
                         </div>
 						<div class = "row m-t-25">     
                                  
