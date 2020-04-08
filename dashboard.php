@@ -185,9 +185,12 @@ $count_total_visitors=mysqli_num_rows($query3);
                                 </div>
                             </div>
                         </div>
-						
-						<div class = "row m-t-25">
-			
+                        <div class= "gambar">
+						<img src="images/icon/tampakatas.jpeg" style="width:auto ;height:450px;"/><img src="images/icon/nomor.png" style="width:auto ;height:300px;"/>
+                        <h3>Reactor Information System. Raga 2019. All rights reserved.</h3></div>
+                        </div>
+						<div class = "row m-t-25">     
+                                 
 						<div class="col-sm-6 col-lg-3" id="gaugeArea" style= "display:table-cell"><br/></div>
 						<div class="col-sm-6 col-lg-3" id="gaugeArea1" style= "display:table-cell"><br/></div>
 						<div class="col-sm-6 col-lg-3" id="gaugeArea2"style= "display:table-cell"><br/></div>
@@ -195,6 +198,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 						<div class="col-sm-6 col-lg-3"  id="gaugeArea4"style= "display:table-cell"><br/></div>
 						<div class="col-sm-6 col-lg-3" id="gaugeArea5"style= "display:table-cell"><br/></div>
                         <div class="col-sm-6 col-lg-3" id="gaugeArea6"style= "display:table-cell"><br/></div>
+                        
 		                    </div>				
 						
 						
@@ -432,6 +436,7 @@ $(".has-submenu > a").click(function() {
 <script>
 
 var daya = [];
+var status = "";
 
 
 
@@ -444,6 +449,7 @@ fetch("statusbkojsonlimit.php")
 	for (i=0;i<(tabel.length-1);i++){
 	
 	daya=tabel[i]['Daya'];
+    status=tabel[i]['Status']
 
     if (parseInt(daya)>109)
 {
@@ -453,8 +459,8 @@ else {
     document.querySelector("#daya").style.color = '#666';
 };
 
-
 document.querySelector("#daya").value=daya+" "+"kW";
+document.querySelector("#status").value=status;
 
 
 

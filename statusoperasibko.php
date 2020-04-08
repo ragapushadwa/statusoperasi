@@ -185,7 +185,7 @@ if ($_SESSION['level']=="Visitor") {
 <tr>
 <th>10</th>
             
-<th>Laju Paparan Thermal Column</th>
+<th>Laju Paparan Ruang Kontrol</th>
         <th></th>
         <th></th>
         <th>≤2,5mR/jam</th>
@@ -239,7 +239,7 @@ if ($_SESSION['level']=="Visitor") {
 <tr>
 <th>16</th>
             
-            <th>Laju Paparan Ruang Kontrol</th>
+            <th>Laju Paparan Bulk Shielding</th>
         <th></th>
         <th></th>
         <th>≤2,5mR/jam</th>

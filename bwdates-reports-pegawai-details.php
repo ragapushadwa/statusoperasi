@@ -266,16 +266,8 @@ result = lists.reduce((r, { Time, Labels }) => {
         return r;
     }, {});
 
-//    if (Object.values(result)=='Operator'){
-  //    Object.values(result)='Operator';
+    
 
-    //}
-    //else if (Object.values(result)=='PPR'){
-      //Object.values(result)='PPR';
-    //}
-    //else {
-      //Object.values(result)='Lainnya';
-    //}
 
     Object.values(result).forEach((a)=>{
   if (typeof a['Operator'] === 'undefined'){
@@ -283,6 +275,9 @@ a['Operator']=0;
   }
  else if (typeof a['PPR'] === 'undefined'){
 a['PPR']=0;
+  }
+  else if (typeof a['Maintenance'] === 'undefined'){
+a['Maintenance']=0;
   }
  else if (typeof a['Lainnya'] === 'undefined'){
 a['Lainnya']=0;
@@ -308,7 +303,9 @@ else if(x=="PPR"){
   lists3[1].push(Object.values(a)[i]);
 }
 else if(x=="Lainnya"){
+  
   lists3[2].push(Object.values(a)[i]);
+  
 }
 });
 
