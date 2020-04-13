@@ -204,8 +204,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 						
 						
 					
-								</div>
-								
+																
 								
 						
 					
@@ -264,14 +263,14 @@ $count_total_visitors=mysqli_num_rows($query3);
 	    hasNeedle: true,
 	    needleColor: 'black',
       arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
-      arcDelimiters: [10, 60],
+      arcDelimiters: [10,60],
       arcPadding: 6,
       arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
+      arcLabels: ['2', '2,5', '5'],
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '350'],
+      rangeLabel: ['0', '5'],
       centralLabel: 'GAM1',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -284,11 +283,11 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcDelimiters: [10, 60],
       arcPadding: 6,
       arcPaddingColor: 'none',
-      arcLabels: ['35', '210', '315'],
+      arcLabels: ['2', '2,5', '5'],
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '350'],
+      rangeLabel: ['0', '5'],
       centralLabel: 'GAM2',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',

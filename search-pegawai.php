@@ -99,14 +99,14 @@ $ret=mysqli_query($con,"select *from tblpegawai where FullName like '$sdata%'||J
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
+
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
 
               
                 <tr>
-                  <td><?php echo $cnt;?></td>
-            
+                  <td><?php echo $cnt;?></td>            
                   <td><?php  echo $row['FullName'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
                 <td><?php  echo $row['outtime'];?></td>

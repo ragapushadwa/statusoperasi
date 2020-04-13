@@ -377,7 +377,7 @@ function randomScalingFactor() {
 }
 
 function onRefresh(chart) {
-	fetch("json.php")
+	fetch("jsonlimit.php")
 .then((res)=>res.json())
 .then((data)=>{
 	for (i=0;i<(data.length-1);i++){

@@ -418,7 +418,7 @@ document.querySelector(".lajualir2plat").innerHTML=lajualir2plat +" "+"lpm";
 
 }
 });
-fetch("json.php")
+fetch("jsonlimit.php")
 .then((ser)=>ser.json())
 .then((data)=>{
 	for (i=0;i<(data.length-1);i++){

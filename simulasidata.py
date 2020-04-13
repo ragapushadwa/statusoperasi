@@ -4,7 +4,7 @@ import random
 import time
 
 while True:
-    GAM1= str(random.randrange(50))
+    GAM1= str(random.randrange(0,5))
     GAM2= str(random.randrange(50))
     GAM3= str(random.randrange(50))
     GAM4= str(random.randrange(50))
