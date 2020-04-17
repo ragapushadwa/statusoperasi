@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if ($_SESSION['level']=="Visitor") {
+if ($_SESSION['level']=="0") {
   header('location:logout.php');
   } else{
     if(isset($_POST['submit']))
@@ -14,7 +14,7 @@ if ($_SESSION['level']=="Visitor") {
   
      $query=mysqli_query($con, "update tbladmin set AdminName='$AName', MobileNumber ='$mobno', Email= '$email' where ID='$adminid'");
     if ($query) {
-    $msg="Admin profile has been updated.";
+    $msg="Profile has been updated.";
   }
   else
     {
