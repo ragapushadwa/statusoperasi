@@ -2,9 +2,9 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-if ($_SESSION['level']=="0") {
-  header('location:logout.php');
-  } else{
+if (strlen($_SESSION['cvmsaid']==0)) {
+    header('location:logout.php');
+      } else{
     if(isset($_POST['submit']))
   {
     $adminid=$_SESSION['cvmsaid'];
@@ -84,7 +84,7 @@ if ($_SESSION['level']=="0") {
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <strong>Update</strong> Admin Profile
+                                        <strong>Update</strong> Admin Profile <?php echo $adminid ?>
                                     </div>
                                     <div class="card-body card-block">
                                         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -93,7 +93,7 @@ if ($_SESSION['level']=="0") {
   }  ?> </p>
 
    <?php
-$adminid=$_SESSION['level']=="User";
+$adminid=$_SESSION['cvmsaid'];
 $ret=mysqli_query($con,"select * from tbladmin where ID='$adminid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
@@ -168,9 +168,17 @@ while ($row=mysqli_fetch_array($ret)) {
    </div>
     </div>
     <script>
-$(".has-submenu ul").hide();
-$(".has-submenu > a").click(function() {
-  $(this).next("ul").toggle();
+document.querySelector(".has-submenu ul").style.display="none";
+document.querySelector(".has-submenu").addEventListener("click",(event)=>{
+    let anak = document.querySelector(".has-submenu").children;
+    if (anak[1].style.display=="none"){
+        anak[1].style.display="block";  
+    }
+   else {
+    anak[1].style.display="none"; 
+   }
+   
+
 });
 </script>
     <!-- Jquery JS-->

@@ -32,18 +32,22 @@ if (isset($_POST['login']))
         {
 
             $_SESSION['level'] = "User";
+            $_SESSION['cvmsaid']=$ret['ID'];
             header('location:dashboard.php');
         }
         else if ($ret['level'] == 'Admin')
         {
 
             $_SESSION['level'] = "Admin";
+            $_SESSION['cvmsaid']=$ret['ID'];
             header('location:dashboard-admin.php');
+            
         }
         else if ($ret['level'] == 'Visitor')
         {
 
             $_SESSION['level'] = "Visitor";
+            $_SESSION['cvmsaid']=$ret['ID'];
             header('location:dashboard-visitor.php');
         }
     }
