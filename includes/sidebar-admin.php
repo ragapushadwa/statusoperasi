@@ -22,19 +22,23 @@
                             <a href="manage-newvisitors.php"  style="color: blue">
                                 <i class="fa fa-users"></i>Manage Pegawai</a>
                         </li>
-                     
+                        <li>
+                            <a href="searchpegawai.php" style="color: blue">
+                                <i class="fa fa-address-book"></i>Search Pegawai</a>
+                        </li>
+                        <li>
+                            <a href="registration.php"  style="color: blue">
+                                <i class="fa fa-address-card"></i>User Registration</a>
+                        </li> 
  
                         
                       <li>
-                            <a href="bwdates-reports.php"  style="color: blue">
+                            <a href="bwdates-reports.php"  style="color: blue"> 
                                 <i class="fas fa-copy"></i>Report</a>
                         </li> 
 
                            
-                      <li>
-                            <a href="registration.php"  style="color: blue">
-                                <i class="fas fa-copy"></i>User Registration</a>
-                        </li> 
+                    
                        
          
                         <ul>
