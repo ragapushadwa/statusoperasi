@@ -88,6 +88,7 @@ $sdata=$_POST['searchdata'];
                                             
                   <th>S.NO</th>            
                   <th>Full Name</th>
+                  <th>Posisi</th>
                    <th>Check In</th>
                    <th>Check Out</th>                 
                 
@@ -108,8 +109,10 @@ while ($row=mysqli_fetch_array($ret)) {
                 <tr>
                   <td><?php echo $cnt;?></td>            
                   <td><?php  echo $row['FullName'];?></td>
+                  <td><?php  echo $row['Jenis'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
                 <td><?php  echo $row['outtime'];?></td>
+                <td><a href="visitor-pegawai-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
                  
                 </tr>
                  <?php
@@ -124,8 +127,11 @@ while ($row=mysqli_fetch_array($ret)) {
   <tr>
   <th>S.NO</th>            
                   <th>Full Name</th>
+                  <th>Posisi</th>
                    <th>Check In</th>
                    <th>Check Out</th> 
+                   <th>Action</th> 
+
                 
    
 

@@ -4,7 +4,7 @@ error_reporting(0);
 include('includes/dbconnection.php');
 error_reporting(0);
 
-if ($_SESSION['level']=="Visitor") {
+if ($_SESSION['level']=="AFK") {
 	
   header('location:logout.php');
   
