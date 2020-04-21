@@ -107,11 +107,11 @@ if ($_SESSION['level']=="Visitor") {
 		<canvas id="myChart"></canvas>
 	</div>
 	<p>
-		<button id="randomizeData">Randomize Data</button>
-		<button id="addDataset">Add Dataset</button>
-		<button id="removeDataset">Remove Dataset</button>
-		<button id="addData">Add Data</button>
-	</p>
+		<button id="randomizeData" style="visibility:hidden">Randomize Data</button>
+		<button id="addDataset" style="visibility:hidden">Add Dataset</button>
+		<button id="removeDataset" style="visibility:hidden">Remove Dataset</button>
+		<button id="addData" style="visibility:hidden">Add Data</button>
+	</p> 
 	<div>
 		<span class="label">duration:</span>
 		<span id="durationValue" class="value">20000</span>

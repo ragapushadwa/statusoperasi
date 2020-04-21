@@ -318,7 +318,7 @@ var chart = new Chart(ctx,{
 		
         labels: lists2[0],
         datasets: [{
-            label: 'Flux',
+            label: 'Laju Alir',
             backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(52, 152, 219)',
             data: lists2[1],
@@ -329,7 +329,7 @@ var chart = new Chart(ctx,{
      options: {
         title: {
             display: true,
-            text: 'Flux Chart'
+            text: 'Laju Alir Chart'
         }
     }
 });
