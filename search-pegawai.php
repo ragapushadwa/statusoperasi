@@ -90,7 +90,8 @@ $sdata=$_POST['searchdata'];
                   <th>Full Name</th>
                   <th>Posisi</th>
                    <th>Check In</th>
-                   <th>Check Out</th>                 
+                   <th>Check Out</th>      
+                   <th>Action</th>           
                 
                                         </tr>
                                         </thead>
