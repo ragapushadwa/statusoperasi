@@ -351,7 +351,7 @@ var mixedChart = new Chart(ctx, {
 
         
         backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(52, 152, 219)',
+            borderColor: 'rgb(127, 140, 141)',
 
             label: 'GAM6',
             data: GAM6[1],

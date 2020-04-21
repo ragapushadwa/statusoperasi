@@ -183,11 +183,11 @@ $cnt=$cnt+1;
 
 
 								</canvas>
-								</div>
+								
 								
 								</div>
 								</div>
-																			<div class ="col-lg7 col-xl-8">
+																			
 						<div class = "card-body">
 						<div class = "chart-area">
 						
@@ -195,12 +195,12 @@ $cnt=$cnt+1;
 
 
 								</canvas>
-								</div>
+								
+								
 								
 								</div>
 								</div>
-								</div>
-																		<div class ="col-lg7 col-xl-8">
+																		
 						<div class = "card-body">
 						<div class = "chart-area">
 						
@@ -208,7 +208,7 @@ $cnt=$cnt+1;
 
 
 								</canvas>
-								</div>
+								
 								
 								</div>
 								</div>
@@ -276,6 +276,7 @@ $(".has-submenu > a").click(function() {
   $(this).next("ul").toggle();
 });
 </script>
+<script>
 var lineChartData = [{label: "Series 1",values: []}];
 var lineChartData1 = [{label: "Series 2",values: []}];
 var lineChartData2 = [{label: "Series 3",values: []}];
@@ -319,7 +320,7 @@ var chart = new Chart(ctx,{
         datasets: [{
             label: 'Flux',
             backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(52, 152, 219)',
             data: lists2[1],
         }]
     },
@@ -362,7 +363,7 @@ var chart = new Chart(ctx,{
         datasets: [{
             label: 'Suhu',
             backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(26, 188, 156)',
             data: lists4[1]
         }]
     },
