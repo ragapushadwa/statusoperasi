@@ -308,70 +308,41 @@ lists4[1].push  (lists[i]['Suhu']);
 
 }
 
+
 var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx,{
-    
+var mixedChart = new Chart(ctx, {
     type: 'line',
-
-    
     data: {
-		
-        labels: lists2[0],
         datasets: [{
-            label: 'Laju Alir',
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(52, 152, 219)',
-            data: lists2[1],
-        }]
-    },
-
-    // Configuration options go here
-     options: {
-        title: {
-            display: true,
-            text: 'Laju Alir Chart'
-        }
-    }
-});
-var ctx = document.getElementById('myChart2').getContext('2d');
-var chart = new Chart(ctx,{
-    
-    type: 'line',
-
-    
-    data: {
-        labels: lists3[0],
-        datasets: [{
-            label: 'Daya',
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: lists3[1]
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-var ctx = document.getElementById('myChart3').getContext('2d');
-var chart = new Chart(ctx,{
-    
-    type: 'line',
-
-    
-    data: {
-        labels: lists4[0],
-        datasets: [{
-            label: 'Suhu',
-            backgroundColor: 'rgba(0,0,0,0)',
+			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(26, 188, 156)',
-            data: lists4[1]
-        }]
+            label: 'Laju Alir Primer',
+            data: lists2[0]
+			
+        }, 
+		{
+			 backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: 'rgb(241, 196, 15)',
+            label: 'Daya',
+            data: lists3[1],
+			
+
+            // Changes this dataset to become a line
+            type: 'line'
+		},{
+			 backgroundColor: 'rgba(0,0,0,0)',
+            borderColor: 'rgb(255, 99, 132)',
+            label: 'Suhu',
+            data: lists4[1],
+			
+
+            // Changes this dataset to become a line
+            type: 'line'
+        }],
+        labels: lists2[0]
     },
-
-    // Configuration options go here
-    options: {}
+    options:{}
 });
-
 </script>
 
 
