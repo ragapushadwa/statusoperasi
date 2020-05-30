@@ -188,31 +188,7 @@ $cnt=$cnt+1;
 								</div>
 								</div>
 																			
-						<div class = "card-body">
-						<div class = "chart-area">
-						
-						<canvas id="myChart2" width="670" height="500" style="display: block; width: 564px; height: 320px;"></canvas>
-
-
-								</canvas>
-								
-								
-								
-								</div>
-								</div>
-																		
-						<div class = "card-body">
-						<div class = "chart-area">
-						
-						<canvas id="myChart3" width="670" height="500" style="display: block; width: 564px; height: 320px;"></canvas>
-
-
-								</canvas>
-								
-								
-								</div>
-								</div>
-									
+				
 
 
 </div>
