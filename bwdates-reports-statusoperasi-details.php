@@ -94,10 +94,10 @@ while ($row=mysqli_fetch_array($ret)) {
 echo "{";
     echo '"No":' . $row['id'] . ',';
     echo '"Time":"' . $row['reading_time'] . '",';
-    echo '"Laju Alir":' . $row['Suhu'] . ',';
+    echo '"Laju Alir":' . $row['LajuAlir'] . ',';
 	echo '"Daya":' . $row['Daya'] . ',';
 
-	echo '"Suhu":' . $row['LajuAlir']  ;
+	echo '"Suhu":' . $row['Suhu']  ;
     echo "},";
 $cnt=$cnt+1;}
 echo "{}];",
@@ -293,7 +293,7 @@ var mixedChart = new Chart(ctx, {
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(26, 188, 156)',
             label: 'Laju Alir Primer',
-            data: lists2[0]
+            data: lists2[1]
 			
         }, 
 		{
