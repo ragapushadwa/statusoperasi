@@ -296,7 +296,7 @@ var mixedChart = new Chart(ctx, {
             data: lists2[1]
 			
         }, 
-		{
+		{   
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(241, 196, 15)',
             label: 'Daya',
