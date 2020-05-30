@@ -26,7 +26,7 @@
     echo "{";
     echo '"No":' . $row['id'] . ',';
     echo '"Time":"' . $row['reading_time'] . '",';
-    echo '"Status":"' . $row['status'] . '",';
+    echo '"Status":"' . $row['StatusOperasi'] . '",';
     echo '"Daya":' . $row['Daya'] . ',';
     echo '"Laju Alir":' . $row['LajuAlir'] . ',';
     echo '"Laju Alir Sekunder Tube":' . $row['LajuAlir2Tube'] . ',';
