@@ -23,7 +23,7 @@ if ($_SESSION['level']=="Visitor") {
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>GAM Report</title>
+    <title>Live BKO</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -370,7 +370,7 @@ else {
     document.querySelector(".daya").style.color = '#666';
 };
 
-if (parseInt(suhutangki)>109)
+if (parseInt(suhutangki)>700)
 {
     document.querySelector(".suhutangki").style.color = 'red';
 }
@@ -385,21 +385,21 @@ if (parseInt(suhubahanbakar)>700)
 else {
     document.querySelector(".suhubahanbakar").style.color = '#666';
 }
-if (parseInt(lajualir)>138)
+if (parseInt(lajualir)<138)
 {
     document.querySelector(".lajualir").style.color = 'red';
 }
 else {
     document.querySelector(".lajualir").style.color = '#666';
 }
-if (parseInt(lajualir2tube)>820)
+if (parseInt(lajualir2tube)<820)
 {
     document.querySelector(".lajualir2tube").style.color = 'red';
 }
 else {
     document.querySelector(".lajualir2tube").style.color = '#666';
 }
-if (parseInt(lajualir2plat)>520)
+if (parseInt(lajualir2plat)<520)
 {
     document.querySelector(".lajualir2plat").style.color = 'red';
 }
@@ -408,7 +408,7 @@ else {
 }    
 
 document.querySelector(".daya").innerHTML=daya+" "+"kW";
-document.querySelector(".suhutangki").innerHTML=suhubahanbakar+" "+"℃";
+document.querySelector(".suhutangki").innerHTML=suhutangki+" "+"℃";
 document.querySelector(".suhubahanbakar").innerHTML=suhubahanbakar+" "+"℃";
 document.querySelector(".lajualir").innerHTML=lajualir+" "+"lpm";
 document.querySelector(".lajualir2tube").innerHTML=lajualir2tube+" "+"lpm";
@@ -426,14 +426,66 @@ fetch("jsonlimit.php")
 	
 	waktu=data[i]['Time'];
 	GAM1=data[i]['GAM1'];
-	
 	GAM2=data[i]['GAM2'];
 	GAM3=data[i]['GAM3'];
 	GAM4=data[i]['GAM4'];
 	GAM5=data[i]['GAM5'];
 	GAM6=data[i]['GAM6'];
 	GAM7=data[i]['GAM7'];
-	
+
+    if (parseInt(GAM1)>2.5)
+{
+    document.querySelector(".GAM1").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM1").style.color = '#666';
+};
+
+if (parseInt(GAM2)>10)
+{
+    document.querySelector(".GAM2").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM2").style.color = '#666';
+}
+
+if (parseInt(GAM3)>100)
+{
+    document.querySelector(".GAM3").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM3").style.color = '#666';
+}
+if (parseInt(GAM4)>25)
+{
+    document.querySelector(".GAM4").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM4").style.color = '#666';
+}
+if (parseInt(GAM5)>10)
+{
+    document.querySelector(".GAM5").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM5").style.color = '#666';
+}
+if (parseInt(GAM6)>2.5)
+{
+    document.querySelector(".GAM6").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM6").style.color = '#666';
+} 
+if (parseInt(GAM7)>2.5)
+{
+    document.querySelector(".GAM7").style.color = 'red';
+}
+else {
+    document.querySelector(".GAM7").style.color = '#666';
+}    
+
+
     document.querySelector(".GAM1").innerHTML=GAM1+" "+"mR/jam";
 document.querySelector(".GAM2").innerHTML=GAM2+" "+"mR/jam";
 document.querySelector(".GAM3").innerHTML=GAM3+" "+"mR/jam";
