@@ -2,17 +2,36 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
-error_reporting(0);
-
-if ($_SESSION['level']=="AFK") {
-	
+if ($_SESSION['level']=="User") {
   header('location:logout.php');
-  
-  } else{ ?>
+  } else{
+    if(isset($_POST['submit']))
+  {
 
+$eid=$_GET['editid'];
+$keluar=$_GET['out'];
+$time=time();
+if ($keluar == "1"){
+	$out=mysqli_query($con,"update tblvisitor set outtime='$time' where  ID='$eid'");
+	if($out){$msg="Visitors Remark has been Updated.";}else{$msg="Something Went Wrong. Please try again";}
+}else{$msg="Something Went Wrong. Please try again";}
+$remark=$_POST['remark'];
+$query=mysqli_query($con,"update tblvisitor set remark='$remark' where  ID='$eid'");
+
+    if ($query) {
+    $msg="Visitors Remark has been Updated.";
+  }
+  else
+    {
+      $msg="Something Went Wrong. Please try again";
+    }
+
+  
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -22,12 +41,12 @@ if ($_SESSION['level']=="AFK") {
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Search Visitors</title>
+    <title>Visitor Detail</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
@@ -42,117 +61,119 @@ if ($_SESSION['level']=="AFK") {
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link href= " https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
-    <link href ="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" type="text/css" rel="stylesheet">
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
+<script src="vendor/jquery-3.3.1.min.js"></script>
 </head>
 
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-      <?php include_once('includes/sidebar.php');?>
+        <?php include_once('includes/sidebar-visitor.php');?>
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-      
+        
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
             <?php include_once('includes/header.php');?>
-            <!-- END HEADER DESKTOP-->
+            <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
+                          
                             <div class="col-lg-12">
-                                <div class="table-responsive table--no-card m-b-30">
-                                 <?php
-if(isset($_POST['search']))
-{ 
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Visitor</strong>  Details
+                                    </div>
+                                    <div class="card-body card-block">
+                                        
+                                            <p style="font-size:16px; color:red" align="center"> <?php if($msg){echo $msg;}  ?> </p>
 
-$sdata=$_POST['searchdata'];
-  ?>
-  <h4 align="center">Result against "<?php echo $sdata;?>" keyword </h4>
-  <hr />   
-
-  <table id="tabelpengunjung" class="display" style="width:100%">
-                                         <thead>
-                                        <tr>
-                                            
-                  <th>S.NO</th>
-            
-                  <th>Full Name</th>
-              
-              <th>Contact Number</th>
-              <th>Email</th>
-                   <th>Action</th>
-                
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                      <?php
-$ret=mysqli_query($con,"select *from tblvisitor where FullName like '$sdata%'||EnterDate like '$sdata%'");
-$num=mysqli_num_rows($ret);
-if($num>0){
+  <?php
+ $eid=$_GET['editid'];
+$ret=mysqli_query($con,"select * from  tblvisitor where ID='$eid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
-
-?>
-
-              
-                <tr>
-                  <td><?php echo $cnt;?></td>
-            
-                  <td><?php  echo $row['FullName'];?></td>
-                  <td><?php  echo $row['MobileNumber'];?></td>
-                <td><?php  echo $row['Email'];?></td>
-                  <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
-                </tr>
-                 <?php
-                 
-                $cnt=$cnt+1;
-} } else { ?>
-
-<?php } }?>
-</tbody>
-<tfoot>
-
-  <tr>
-  <th>S.NO</th>
-            
-                  <th>Full Name</th>
-              
-              <th>Contact Number</th>
-              <th>Email</th>
-                   <th>Action</th>
-                
-   
-
+	?>
+	<table border="1" class="table table-bordered mg-b-0">
+                                            <tr>
+    <th>Full Name</th>
+    <td><?php  echo $row['FullName'];?></td>
   </tr>
-  </tfoot>
-                                    </table>
+   <tr>
+    <th>Kategori</th>
+    <td><?php  echo $row['Jenis'];?></td>
+  </tr>
+  <tr>
+    <th>Mobile Number</th>
+    <td><?php  echo $row['MobileNumber'];?></td>
+  </tr>
+  <tr>
+  <tr>
+    <th>Email</th>
+    <td><?php  echo $row['Email'];?></td>
+  </tr>
+    <th>Alamat</th>
+    <td><?php  echo $row['Address'];?></td>
+  </tr>
+  <tr>
+    <th>Keperluan</th>
+    <td><?php  echo $row['Keperluan'];?></td>
+  </tr>
+  <tr>
+    <th>Check In</th>
+    <td><?php  echo $row['EnterDate'];?></td>
+  </tr>
+
+
+
+<?php if($row['remark']==""){ ?>
+    <form method="post">
+         <tr>
+    <th>Outing Remark :</th>
+    <td>
+    <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+  </tr>                               
+ <tr align="center">
+    <td colspan="2"><button type="submit" name="submit" class="btn btn-primary btn-sm">Update</button></td>
+  </tr>
+                                        </form>
+               <?php } else { ?>
+
+
+
+
+<tr>
+<th>Check Out</th>
+<td><?php echo $row['outtime']; ?>  </td> 
+<?php } ?>
+</tr>
+</table>                        
+                                    </div>
+                                   
                                 </div>
-                            </div>
-                          
+                       
                         </div>
-                        
-                        
-                    </div>
+                            </div>
+    
+<?php include_once('includes/footer.php');?>
+                </div>
                 </div>
             </div>
         </div>
 
-    </div>
-<?php include_once('includes/footer.php');?>
+
     <!-- Jquery JS-->
-    <script src="vendor/jquery-3.3.1.min.js"></script>
+    
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -171,40 +192,20 @@ while ($row=mysqli_fetch_array($ret)) {
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
-	<script src=" https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
-<script src=" https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"> </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js "></script>
-<script src="https://cdn.datatables.net/plug-ins/1.10.20/sorting/numeric-comma.js "></script>
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
     <script src="vendor/treeview/bootstrap-treeview.min.js"> </script>
 
-</body>
-<script>
-$(document).ready(function() {
-    $('#tabelpengunjung').DataTable( {
-		"lengthMenu": [[-1,50,25,10], ["All",50,25,10]],  
-	
-        dom: 'Bfrit',
-		
-        buttons: ['pageLength','excel', 'csv','copy','pdf' ]
-		
-		
-		
-
-    } );
-	
-} );
-</script>
-<script>
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script>
 $(".has-submenu ul").hide();
 $(".has-submenu > a").click(function() {
   $(this).next("ul").toggle();
 });
 </script>
 
+</body>
+
 </html>
+<!-- end document-->
+<?php }  ?>
 <?php }  ?>

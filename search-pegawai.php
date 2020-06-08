@@ -97,7 +97,7 @@ $sdata=$_POST['searchdata'];
                                         </thead>
                                         <tbody>
                                       <?php
-$ret=mysqli_query($con,"select *from tblpegawai where FullName like '$sdata%'||Jenis like '$sdata%'");
+$ret=mysqli_query($con,"select *from tblpegawai where FullName like '$sdata%'||EnterDate like '$sdata%'");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;

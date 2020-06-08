@@ -167,8 +167,7 @@ $Kategori=$_POST['kategori'];
                                                 </div>
                                                 <div class="col-12 col-md-9">
                                                     <input type="text" id="whomtomeet" name="whomtomeet" 
-                                        <p style="text-align: center;"><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit
-                                        </button></p>
+                                        <p style="text-align: center;"><button type="submit" name="submit" id="submit" class="btn btn-primary btn-sm">Submit</button></p>
                                         
                                     </div>
                                         </form>
