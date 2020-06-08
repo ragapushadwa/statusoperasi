@@ -90,15 +90,15 @@ $sdata=$_POST['searchdata'];
             
                   <th>Full Name</th>
               
-              <th>Contact Number</th>
-              <th>Email</th>
+              <th>Kategori</th>
+              <th>Check-in</th>
                    <th>Action</th>
                 
                                         </tr>
                                         </thead>
                                         <tbody>
                                       <?php
-$ret=mysqli_query($con,"select *from tblvisitor where FullName like '$sdata%'||EnterDate like '$sdata%'");
+$ret=mysqli_query($con,"select *from tblvisitor where FullName like '$sdata%' || EnterDate like '$sdata%'");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
@@ -111,8 +111,9 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php echo $cnt;?></td>
             
                   <td><?php  echo $row['FullName'];?></td>
-                  <td><?php  echo $row['MobileNumber'];?></td>
-                <td><?php  echo $row['Email'];?></td>
+                  <td><?php  echo $row['Jenis'];?></td>
+                  <td><?php  echo $row['EnterDate'];?></td>
+                
                   <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
                 </tr>
                  <?php
@@ -129,8 +130,8 @@ while ($row=mysqli_fetch_array($ret)) {
             
                   <th>Full Name</th>
               
-              <th>Contact Number</th>
-              <th>Email</th>
+              <th>Kategori</th>
+              <th>Check in</th>
                    <th>Action</th>
                 
    
