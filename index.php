@@ -112,7 +112,7 @@ if (isset($_POST['login']))
                          <p style="font-size:16px; color:red" align="center"> <?php if($msg){
     echo $msg;
   }  ?> </p>
-     <div class="illustration" align="center"><img src="images/icon/LOGO%20BARU%20BATAN.png" style="width: 93px;height: 92px;" /><img src="images/icon/Logo-sekolah-tinggi-teknologi-nuklir-STTN-BATAN.png" style="width: 93px;height: 92px;" /></div>
+     <div class="illustration" align="center"><img src="images/icon/logo-batan-png-8.png" style="width: 93px;height: 92px;" /><img src="images/icon/Logo-sekolah-tinggi-teknologi-nuklir-STTN-BATAN.png" style="width: 93px;height: 92px;" /></div>
                         <div class="login-form">
                             <form action="" method="post" name="login">
                                 <div class="form-group">
