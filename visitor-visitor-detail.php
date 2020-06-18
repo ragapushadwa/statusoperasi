@@ -39,6 +39,7 @@ $query=mysqli_query($con,"update tblvisitor set remark='$remark' where  ID='$eid
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <link rel="icon" href="images/icon/logo-batan-png-8.png">
 
     <!-- Title Page-->
     <title>Visitor Detail</title>
