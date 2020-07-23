@@ -144,7 +144,7 @@ if ($_SESSION['level']=="Visitor") {
             <th>Suhu Tangki</th>
         <th></th>
         <th></th>
-        <th>≤700℃</th>
+        <th>≤43℃</th>
         <th class= "suhutangki"></th>
 </tr>
 <tr>
@@ -371,7 +371,7 @@ else {
     document.querySelector(".daya").style.color = '#666';
 };
 
-if (parseInt(suhutangki)>700)
+if (parseInt(suhutangki)>43)
 {
     document.querySelector(".suhutangki").style.color = 'red';
 }
