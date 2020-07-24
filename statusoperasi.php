@@ -273,7 +273,7 @@ var config = {
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
-		{	label: 'Suhu',
+		{	label: 'Suhu Tangki',
 			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,

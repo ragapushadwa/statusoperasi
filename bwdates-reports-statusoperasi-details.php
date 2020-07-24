@@ -309,7 +309,7 @@ var mixedChart = new Chart(ctx, {
 		},{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(255, 99, 132)',
-            label: 'Suhu',
+            label: 'Suhu Tangki',
             data: lists4[1],
 			
 
