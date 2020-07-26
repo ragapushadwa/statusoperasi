@@ -160,7 +160,7 @@ b.Time
 FROM
 statusoperasi a
 INNER JOIN data b
-ON b.Time = a.reading_time OR (a.LajuAlir<138 OR Daya>110 OR Suhu>43 OR Suhubahanbakar>700 OR LajuAlir2Tube<820 OR LajuAlir2Plat<520) ORDER BY ID');
+ON b.Time = a.reading_time AND (a.LajuAlir<138 OR Daya>110 OR Suhu>43 OR Suhubahanbakar>700 OR LajuAlir2Tube<820 OR LajuAlir2Plat<520) ORDER BY ID');
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
