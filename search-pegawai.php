@@ -251,7 +251,7 @@ while ($row=mysqli_fetch_array($ret)) {
 <script>
 $(document).ready(function() {
     $('#tabelpengunjung').DataTable( {
-		"lengthMenu": [[-1,50,25,10], ["All",50,25,10]],  
+		"lengthMenu": [[10,25,50,-1], [10,25,50,'All']],  
 	
         dom: 'Bfrit',
 		

@@ -491,7 +491,7 @@ fetch("visitorjson.php")
 <script>
 $(document).ready(function() {
     $('#gamtabel').DataTable( {
-		"lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],  
+		"lengthMenu": [[5,25,50,-1], [10,25,50,"All"]],  
 	
         dom: 'Bfrit',
 		

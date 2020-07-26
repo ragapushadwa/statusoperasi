@@ -14,6 +14,7 @@
     echo '"NO":' . $cnt . ',';
     echo '"Full Name":"' . $row['FullName'] . '",';
     echo '"Kategori":"' . $row['Jenis'] . '",';
+    echo '"Alamat":"' . $row['Address'] . '",';
 	
 	echo '"Check In":"' . $row['EnterDate'] . '",';
 	echo '"Check Out":"' . $row['outtime'] . '"';
