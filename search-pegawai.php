@@ -90,6 +90,14 @@ $sdata=$_POST['searchdata'];
                   <th>S.NO</th>            
                   <th>Full Name</th>
                   <th>Posisi</th>
+                  <th>GAM1</th>
+                  <th>GAM2</th>
+                  <th>GAM3</th>
+                  <th>GAM4</th>
+                  <th>GAM5</th>
+                  <th>GAM6</th>
+                  <th>GAM7</th>
+                  <th>GAM Time</th>
                    <th>Check In</th>
                    <th>Check Out</th>      
                    <th>Action</th>           
@@ -98,7 +106,25 @@ $sdata=$_POST['searchdata'];
                                         </thead>
                                         <tbody>
                                       <?php
-$ret=mysqli_query($con,"select *from tblpegawai where FullName like '$sdata%'||EnterDate like '$sdata%'");
+                                      
+$ret=mysqli_query($con,"	SELECT
+a.FullName,
+a.Jenis,
+a.EnterDate,
+a.outtime,
+b.GAM1,
+b.GAM2,
+b.GAM3,
+b.GAM4,
+b.GAM5,
+b.GAM6,
+b.GAM7,
+b.Time 
+FROM
+tblpegawai a
+INNER JOIN data b
+ON b.Time BETWEEN a.EnterDate AND a.outtime 
+where a.FullName like '$sdata%'||a.EnterDate like '$sdata%'");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
@@ -112,6 +138,14 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php echo $cnt;?></td>            
                   <td><?php  echo $row['FullName'];?></td>
                   <td><?php  echo $row['Jenis'];?></td>
+                  <td><?php  echo $row['GAM1'];?></td>
+                  <td><?php  echo $row['GAM2'];?></td>
+                  <td><?php  echo $row['GAM3'];?></td>
+                  <td><?php  echo $row['GAM4'];?></td>
+                  <td><?php  echo $row['GAM5'];?></td>
+                  <td><?php  echo $row['GAM6'];?></td>
+                  <td><?php  echo $row['GAM7'];?></td>
+                  <td><?php  echo $row['Time'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
                 <td><?php  echo $row['outtime'];?></td>
                 <td><a href="visitor-pegawai-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
@@ -130,10 +164,17 @@ while ($row=mysqli_fetch_array($ret)) {
   <th>S.NO</th>            
                   <th>Full Name</th>
                   <th>Posisi</th>
+                  <th>GAM1</th>
+                  <th>GAM2</th>
+                  <th>GAM3</th>
+                  <th>GAM4</th>
+                  <th>GAM5</th>
+                  <th>GAM6</th>
+                  <th>GAM7</th>
+                  <th>GAM Time</th>
                    <th>Check In</th>
-                   <th>Check Out</th> 
+                   <th>Check Out</th>      
                    <th>Action</th> 
-
                 
    
 
