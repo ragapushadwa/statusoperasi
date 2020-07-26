@@ -27,7 +27,11 @@
                                 <i class="fa fa-address-book"></i>Search Pegawai</a>
                         </li>
  
-                        
+                        <li>
+                            <a href="bko-report.php" style="color: blue">
+                                <i class="fa fa-address-book"></i>Report BKO</a>
+                        </li>
+ 
                       <li>
                             <a href="bwdates-reports.php"  style="color: blue">
                                 <i class="fas fa-copy"></i>Report</a>
