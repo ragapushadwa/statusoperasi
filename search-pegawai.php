@@ -108,6 +108,7 @@ $sdata=$_POST['searchdata'];
                                       <?php
                                       
 $ret=mysqli_query($con,"	SELECT
+a.ID,
 a.FullName,
 a.Jenis,
 a.EnterDate,
@@ -120,11 +121,12 @@ b.GAM5,
 b.GAM6,
 b.GAM7,
 b.Time 
+
 FROM
 tblpegawai a
 INNER JOIN data b
-ON b.Time BETWEEN a.EnterDate AND a.outtime 
-where a.FullName like '$sdata%'||a.EnterDate like '$sdata%'");
+ON b.Time BETWEEN a.EnterDate AND a.outtime OR b.Time > a.EnterDate AND a.outtime is NULL
+where a.FullName like '$sdata'||a.EnterDate like '$sdata' ORDER BY a.ID DESC ");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
@@ -138,13 +140,33 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php echo $cnt;?></td>            
                   <td><?php  echo $row['FullName'];?></td>
                   <td><?php  echo $row['Jenis'];?></td>
-                  <td><?php  echo $row['GAM1'];?></td>
-                  <td><?php  echo $row['GAM2'];?></td>
-                  <td><?php  echo $row['GAM3'];?></td>
-                  <td><?php  echo $row['GAM4'];?></td>
-                  <td><?php  echo $row['GAM5'];?></td>
-                  <td><?php  echo $row['GAM6'];?></td>
-                  <td><?php  echo $row['GAM7'];?></td>
+                  <td><?php if($row['GAM1']>2.5){
+                      echo '<p style="color:red">' . $row['GAM1'] . '</p>';
+                  }else{ echo $row['GAM1'];}
+                  ?></td>
+				   <td><?php if($row['GAM2']>10){
+                      echo '<p style="color:red">' . $row['GAM2'] . '</p>';
+                  }else{ echo $row['GAM2'];}
+                  ?></td>
+				  <td><?php if($row['GAM3']>100){
+                      echo '<p style="color:red">' . $row['GAM3'] . '</p>';
+                  }else{ echo $row['GAM3'];}
+                  ?></td>
+				   <td><?php if($row['GAM4']>25){
+                      echo '<p style="color:red">' . $row['GAM4'] . '</p>';
+                  }else{ echo $row['GAM4'];}
+                  ?></td>
+				   <td><?php if($row['GAM5']>10){
+                      echo '<p style="color:red">' . $row['GAM5'] . '</p>';
+                  }else{ echo $row['GAM5'];}
+                  ?></td>
+				   <td><?php if($row['GAM6']>2.5){
+                      echo '<p style="color:red">' . $row['GAM6'] . '</p>';
+                  }else{ echo $row['GAM6'];}
+                  ?></td>
+                   <td><?php if($row['GAM7']>2.5){
+                      echo '<p style="color:red">' . $row['GAM7'] . '</p>';
+                  }else{ echo $row['GAM7'];}?></td>
                   <td><?php  echo $row['Time'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
                 <td><?php  echo $row['outtime'];?></td>

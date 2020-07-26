@@ -13,7 +13,8 @@
     echo "{";
     echo '"NO":' . $cnt . ',';
     echo '"Full Name":"' . $row['FullName'] . '",';
-    echo '"Contact Number":' . $row['MobileNumber'] . ',';
+    echo '"Alamat":"' . $row['Address'] . '",';
+    echo '"Kategori":"' . $row['Jenis'] . '",';
 	echo '"Keperluan":"' . $row['Keperluan'] . '",';
 	echo '"Check In":"' . $row['EnterDate'] . '",';
 	echo '"Check Out":"' . $row['outtime'] . '"';

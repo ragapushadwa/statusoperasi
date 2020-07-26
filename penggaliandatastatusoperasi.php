@@ -24,7 +24,7 @@ if ($_SESSION['level']=="Visitor") {
 	<link rel="icon" href="images/icon/logo-batan-png-8.png">
 
     <!-- Title Page-->
-    <title>GAM Report</title>
+    <title>Status Operasi Reports</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -115,14 +115,21 @@ echo "{}];",
                                             <tr>
                   <th>ID</th>
                   <th>Waktu</th>
-                  <th>GAM1</th>
+                  <th>Laju Alir</th>
+                  <th>Daya</th>
+              <th>Suhu Tangki</th>
+			  <th>Suhu Bahan Bakar</th>
+			  <th>Laju Alir Sekunder Tube</th>
+			  <th>Laju Alir Sekunder Plat</th>
+              <th>GAM1</th>
               <th>GAM2</th>
 			  <th>GAM3</th>
 			  <th>GAM4</th>
 			  <th>GAM5</th>
 			  <th>GAM6</th>
               <th>GAM7</th>
-              <th>Detail</th>
+			  
+              
 			  
               
 			  
@@ -132,7 +139,28 @@ echo "{}];",
                                         </thead>
 										<tbody>
                                        <?php
-$ret=mysqli_query($con,'SELECT * FROM data WHERE (GAM1 >2.5 || GAM2>10 || GAM3>100 || GAM4>25 || GAM5>10 || GAM6>2.5 || GAM2>2.5)');
+$ret=mysqli_query($con,'SELECT
+a.ID,
+a.LajuAlir,
+a.Daya,
+a.Suhu,
+a.Suhubahanbakar,
+a.LajuAlir2Tube,
+a.LajuAlir2Plat,
+a.reading_time,
+b.GAM1,
+b.GAM2,
+b.GAM3,
+b.GAM4,
+b.GAM5,
+b.GAM6,
+b.GAM7,
+b.Time 
+
+FROM
+statusoperasi a
+INNER JOIN data b
+ON b.Time = a.reading_time OR (a.LajuAlir<138 OR Daya>110 OR Suhu>43 OR Suhubahanbakar>700 OR LajuAlir2Tube<820 OR LajuAlir2Plat<520) ORDER BY ID');
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -141,8 +169,32 @@ while ($row=mysqli_fetch_array($ret)) {
                 <tr>
                   <td><?php echo $cnt;?></td>
             
-                  <td><?php  echo $row['Time'];?></td>
-                  <td><?php if($row['GAM1']>2.5){
+                  <td><?php  echo $row['reading_time'];?></td>
+                  <td><?php if($row['LajuAlir']<138){
+                      echo '<p style="color:red">' . $row['LajuAlir'] . '</p>';
+                  }else{ echo $row['LajuAlir'];}
+                  ?></td>
+				   <td><?php if($row['Daya']>110){
+                      echo '<p style="color:red">' . $row['Daya'] . '</p>';
+                  }else{ echo $row['Daya'];}
+                  ?></td>
+				  <td><?php if($row['Suhu']>43){
+                      echo '<p style="color:red">' . $row['Suhu'] . '</p>';
+                  }else{ echo $row['Suhu'];}
+                  ?></td>
+				   <td><?php if($row['Suhubahanbakar']>700){
+                      echo '<p style="color:red">' . $row['Suhubahanbakar'] . '</p>';
+                  }else{ echo $row['Suhubahanbakar'];}
+                  ?></td>
+				   <td><?php if($row['LajuAlir2Tube']<820){
+                      echo '<p style="color:red">' . $row['LajuAlir2Tube'] . '</p>';
+                  }else{ echo $row['LajuAlir2Tube'];}
+                  ?></td>
+				   <td><?php if($row['LajuAlir2Plat']<520){
+                      echo '<p style="color:red">' . $row['LajuAlir2Plat'] . '</p>';
+                  }else{ echo $row['LajuAlir2Plat'];}
+                  ?></td>
+                     <td><?php if($row['GAM1']>2.5){
                       echo '<p style="color:red">' . $row['GAM1'] . '</p>';
                   }else{ echo $row['GAM1'];}
                   ?></td>
@@ -170,7 +222,8 @@ while ($row=mysqli_fetch_array($ret)) {
                       echo '<p style="color:red">' . $row['GAM7'] . '</p>';
                   }else{ echo $row['GAM7'];}
                   ?></td>
-                  <td><button onclick="nambah(<?php  echo "'".$row['Time'] . "'";?>)"><i class="fa fa-edit fa-1x"></i></button></td>
+                  
+               
 				  
              
                 
@@ -182,15 +235,22 @@ $cnt=$cnt+1;
 <tfoot>
 <tr>
 <th>ID</th>
-<th>Waktu</th>
-<th>GAM1</th>
-<th>GAM2</th>
-<th>GAM3</th>
-<th>GAM4</th>
-<th>GAM5</th>
-<th>GAM6</th>
-<th>GAM7</th>
-<th>Detail</th>
+                  <th>Waktu</th>
+                  <th>Laju Alir</th>
+                  <th>Daya</th>
+              <th>Suhu Tangki</th>
+			  <th>Suhu Bahan Bakar</th>
+			  <th>Laju Alir Sekunder Tube</th>
+			  <th>Laju Alir Sekunder Plat</th>
+              <th>GAM1</th>
+              <th>GAM2</th>
+			  <th>GAM3</th>
+			  <th>GAM4</th>
+			  <th>GAM5</th>
+			  <th>GAM6</th>
+              <th>GAM7</th>
+			  
+              
 
 </tr>
 </tfoot>
@@ -200,7 +260,7 @@ $cnt=$cnt+1;
                             </div>
                           
                         </div>
-                        <div class="section__content section__content--p30">
+                        <div class="section__content section__content--p30" style="display:none";>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-12">
@@ -248,6 +308,7 @@ echo "{}];",
                   
                   <th>Nama</th>
               <th>Kategori</th>
+              <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
 		
@@ -272,6 +333,7 @@ $cnt=$cnt+1;
                   
                   <th>Nama</th>
               <th>Kategori</th>
+              <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
 
@@ -331,6 +393,7 @@ echo "{}];",
                   
                   <th>Nama</th>
               <th>Kategori</th>
+              <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
 		
@@ -353,6 +416,7 @@ echo "{}];",
                   
                   <th>Nama</th>
               <th>Kategori</th>
+              <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
 
@@ -452,7 +516,7 @@ function nambah(knowntime){
     let isi = ''
     res.forEach(item=>{
         if(item['NO']){
-            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
+            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+'</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
         }  
     });
     document.querySelector('.pengunjunggam').innerHTML=isi;
@@ -474,7 +538,7 @@ fetch("visitorjson.php")
     let isi = ''
     res.forEach(item=>{
         if(item['NO']){
-            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
+            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+    '</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
         }  
     });
     document.querySelector('.visitorgam').innerHTML=isi;
@@ -487,7 +551,7 @@ fetch("visitorjson.php")
 <script>
 $(document).ready(function() {
     $('#gamtabel').DataTable( {
-		"lengthMenu": [[0,10,25,50,-1], [0,10,25,50,"All"]],  
+		"lengthMenu": [[10,25,50,-1], [10,25,50,"All"]],  
 	
         dom: 'Bfrit',
 		
@@ -506,9 +570,9 @@ $(document).ready(function() {
     $('#pengunjunggam').DataTable( {
 		"lengthMenu": [[0,10,25,50,-1], [0,10,25,50,"All"]],  
 	
-        dom: 'Bfrit',
+        dom: 'Brit',
 		
-        buttons: ['pageLength','excel', 'csv','copy','pdf' ]
+        buttons: []
 		
 		
 		
@@ -523,9 +587,9 @@ $(document).ready(function() {
     $('#visitorgam').DataTable( {
 		"lengthMenu": [[0,10,25,50,-1], [0,10,25,50,"All"]],  
 	
-        dom: 'Bfrit',
+        dom: 'Brit',
 		
-        buttons: ['pageLength','excel', 'csv','copy','pdf' ]
+        buttons: [ ]
 		
 		
 		

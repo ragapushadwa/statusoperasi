@@ -135,12 +135,12 @@ while ($row=mysqli_fetch_array($ret)) {
 
 <?php if($row['remark']==""){ ?>
     <form method="post">
-         <tr>
+         <tr style='display:none'>
     <th>Outing Remark :</th>
     <td>
     <textarea name="remark" placeholder="" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
   </tr>                               
- <tr align="center">
+ <tr align="center" style='display:none'>
     <td colspan="2"><button type="submit" name="submit" class="btn btn-primary btn-sm">Update</button></td>
   </tr>
                                         </form>

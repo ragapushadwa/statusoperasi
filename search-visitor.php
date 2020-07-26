@@ -4,7 +4,7 @@ error_reporting(0);
 include('includes/dbconnection.php');
 error_reporting(0);
 
-if ($_SESSION['level']=="AFK") {
+if ($_SESSION['level']=="Visitor") {
 	
   header('location:logout.php');
   
@@ -87,35 +87,91 @@ $sdata=$_POST['searchdata'];
                                          <thead>
                                         <tr>
                                             
-                  <th>S.NO</th>
-            
+                  <th>S.NO</th>            
                   <th>Full Name</th>
-              
-              <th>Kategori</th>
-              <th>Check-in</th>
-                   <th>Action</th>
+                  <th>Kategori</th>
+                  <th>GAM1</th>
+                  <th>GAM2</th>
+                  <th>GAM3</th>
+                  <th>GAM4</th>
+                  <th>GAM5</th>
+                  <th>GAM6</th>
+                  <th>GAM7</th>
+                  <th>GAM Time</th>
+                   <th>Check In</th>
+                   <th>Check Out</th>      
+                   <th>Action</th>           
                 
                                         </tr>
                                         </thead>
                                         <tbody>
                                       <?php
-$ret=mysqli_query($con,"select *from tblvisitor where FullName like '$sdata%' || EnterDate like '$sdata%'");
+                                      
+$ret=mysqli_query($con,"	SELECT
+a.ID,
+a.FullName,
+a.Jenis,
+a.EnterDate,
+a.outtime,
+b.GAM1,
+b.GAM2,
+b.GAM3,
+b.GAM4,
+b.GAM5,
+b.GAM6,
+b.GAM7,
+b.Time 
+
+FROM
+tblvisitor a
+INNER JOIN data b
+ON b.Time BETWEEN a.EnterDate AND a.outtime OR b.Time > a.EnterDate AND a.outtime is NULL
+where a.FullName like '$sdata'||a.EnterDate like '$sdata' ORDER BY a.ID DESC ");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
+
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
 
               
                 <tr>
-                  <td><?php echo $cnt;?></td>
-            
+                  <td><?php echo $cnt;?></td>            
                   <td><?php  echo $row['FullName'];?></td>
                   <td><?php  echo $row['Jenis'];?></td>
+                  <td><?php if($row['GAM1']>2.5){
+                      echo '<p style="color:red">' . $row['GAM1'] . '</p>';
+                  }else{ echo $row['GAM1'];}
+                  ?></td>
+				   <td><?php if($row['GAM2']>10){
+                      echo '<p style="color:red">' . $row['GAM2'] . '</p>';
+                  }else{ echo $row['GAM2'];}
+                  ?></td>
+				  <td><?php if($row['GAM3']>100){
+                      echo '<p style="color:red">' . $row['GAM3'] . '</p>';
+                  }else{ echo $row['GAM3'];}
+                  ?></td>
+				   <td><?php if($row['GAM4']>25){
+                      echo '<p style="color:red">' . $row['GAM4'] . '</p>';
+                  }else{ echo $row['GAM4'];}
+                  ?></td>
+				   <td><?php if($row['GAM5']>10){
+                      echo '<p style="color:red">' . $row['GAM5'] . '</p>';
+                  }else{ echo $row['GAM5'];}
+                  ?></td>
+				   <td><?php if($row['GAM6']>2.5){
+                      echo '<p style="color:red">' . $row['GAM6'] . '</p>';
+                  }else{ echo $row['GAM6'];}
+                  ?></td>
+                   <td><?php if($row['GAM7']>2.5){
+                      echo '<p style="color:red">' . $row['GAM7'] . '</p>';
+                  }else{ echo $row['GAM7'];}?></td>
+                  <td><?php  echo $row['Time'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
-                
-                  <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
+                <td><?php  echo $row['outtime'];?></td>
+                <td><a href="visitor-detail.php?editid=<?php echo $row['ID'];?>"><i class="fa fa-edit fa-1x"></i></a></a></td>
+                 
                 </tr>
                  <?php
                  
@@ -127,13 +183,20 @@ while ($row=mysqli_fetch_array($ret)) {
 <tfoot>
 
   <tr>
-  <th>S.NO</th>
-            
+  <th>S.NO</th>            
                   <th>Full Name</th>
-              
-              <th>Kategori</th>
-              <th>Check in</th>
-                   <th>Action</th>
+                  <th>Kategori</th>
+                  <th>GAM1</th>
+                  <th>GAM2</th>
+                  <th>GAM3</th>
+                  <th>GAM4</th>
+                  <th>GAM5</th>
+                  <th>GAM6</th>
+                  <th>GAM7</th>
+                  <th>GAM Time</th>
+                   <th>Check In</th>
+                   <th>Check Out</th>      
+                   <th>Action</th> 
                 
    
 

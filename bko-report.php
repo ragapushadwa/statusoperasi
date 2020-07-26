@@ -95,10 +95,9 @@ if ($_SESSION['level']==Visitor) {
 
                                         <select name="level" class="form-control dropdown" required>
                                             <option value="">Pilih Report</option>
-                                            <option value="1">Visitor</option>
-                                            <option value="4">Pegawai</option>
-                                            <option value="2">Status Operasi</option>
-                                            <option value="3">GAM</option>
+                                           
+                                            <option value="1">Status Operasi</option>
+                                            <option value="2">GAM</option>
                                         </select>
 										</div>
                                 <div class="card visitor">
@@ -577,17 +576,11 @@ selectElement.addEventListener('change', (event) => {
   const statusoperasi = $('.statusoperasi');
   const GAM = $('.GAM');
   if (event.target.value == 1 ) {
-	  visitor.show(1000);
-      pegawai.hide();
-	  statusoperasi.hide();
-	  GAM.hide(); 	  
+	$.redirect('penggaliandatastatusoperasi.php')
   }
  
   else if (event.target.value == 2){
-	  visitor.hide();
-      pegawai.hide();
-	  statusoperasi.show(1000);
-	  GAM.hide();
+	$.redirect('penggaliandatagam.php')
   }
   else if (event.target.value==3){
 	  visitor.hide();
