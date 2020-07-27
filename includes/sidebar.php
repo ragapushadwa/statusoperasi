@@ -29,7 +29,7 @@
  
                         <li>
                             <a href="bko-report.php" style="color: blue">
-                                <i class="fa fa-address-book"></i>Report BKO</a>
+                                <i class="fa fa-cogs"></i>Report BKO</a>
                         </li>
  
                       <li>
