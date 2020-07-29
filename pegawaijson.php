@@ -12,6 +12,7 @@
    
     echo "{";
     echo '"NO":' . $cnt . ',';
+    echo '"ID":"' . $row['ID'] . '",';
     echo '"Full Name":"' . $row['FullName'] . '",';
     echo '"Kategori":"' . $row['Jenis'] . '",';
     echo '"Alamat":"' . $row['Address'] . '",';

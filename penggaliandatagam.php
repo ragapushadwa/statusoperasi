@@ -251,6 +251,7 @@ echo "{}];",
               <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
+              <th>Detail</th>
 		
 			  
               
@@ -276,6 +277,7 @@ $cnt=$cnt+1;
               <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
+              <th>Detail</th>
 
 </tr>
 </tfoot>
@@ -336,6 +338,7 @@ echo "{}];",
               <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
+              <th>Detail</th>
 		
 			  
               
@@ -359,6 +362,7 @@ echo "{}];",
               <th>Alamat</th>
 			  <th>Check In</th>
 			  <th>Check Out</th>
+			  <th>Detail</th>
 
 </tr>
 </tfoot>
@@ -456,7 +460,7 @@ function nambah(knowntime){
     let isi = ''
     res.forEach(item=>{
         if(item['NO']){
-            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+'</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
+            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+'</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td><td><a href="visitor-pegawai-detail.php?editid='+item['ID']+'"><i class="fa fa-edit fa-1x"></i></a></td></tr>';   
         }  
     });
     document.querySelector('.pengunjunggam').innerHTML=isi;
@@ -478,7 +482,7 @@ fetch("visitorjson.php")
     let isi = ''
     res.forEach(item=>{
         if(item['NO']){
-            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+    '</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td></tr>';   
+            isi=isi+'<tr><td>'+item['NO']+'</td><td>'+item['Full Name']+'</td><td>'+item['Kategori']+'</td><td>'+item['Alamat']+    '</td><td>'+item['Check In']+'</td><td>'+item['Check Out']+'</td><td><a href="visitor-detail.php?editid='+item['ID']+'"><i class="fa fa-edit fa-1x"></i></a></td></tr>';   
         }  
     });
     document.querySelector('.visitorgam').innerHTML=isi;
