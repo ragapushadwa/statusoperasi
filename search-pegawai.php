@@ -126,7 +126,7 @@ FROM
 tblpegawai a
 INNER JOIN data b
 ON b.Time BETWEEN a.EnterDate AND a.outtime OR b.Time > a.EnterDate AND a.outtime is NULL
-where a.FullName like '$sdata'||a.EnterDate like '$sdata' ORDER BY a.ID DESC ");
+where a.FullName like '$sdata'||a.EnterDate like '$sdata' ||a.Jenis like '$sdata' ORDER BY a.ID DESC ");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
