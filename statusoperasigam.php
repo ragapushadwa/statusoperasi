@@ -448,7 +448,7 @@ var config = {
 	type: 'line',
 	data: {
 		datasets: [{
-			label: 'GAM1',
+			label: 'GAM1 mR/jam',
 			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
 			borderColor: chartColors.red,
 			fill: false,
@@ -456,7 +456,7 @@ var config = {
 			borderDash: [8, 4],
 			data: []	
 		}, {
-			label: 'GAM2',
+			label: 'GAM2 mR/jam',
 			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
 			borderColor: chartColors.orange,
 			fill: false,
@@ -464,14 +464,14 @@ var config = {
 			data: []
 		},{
 
-			label: 'GAM3',
+			label: 'GAM3 mR/jam',
 			backgroundColor: color(chartColors.green).alpha(0.5).rgbString(),
 			borderColor: chartColors.green,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},{
-			label: 'GAM4',
+			label: 'GAM4 mR/jam',
 			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,
@@ -479,7 +479,7 @@ var config = {
 			data: []
 		},
 		{
-			label: 'GAM5',
+			label: 'GAM5 mR/jam',
 			backgroundColor: color(chartColors.grey).alpha(0.5).rgbString(),
 			borderColor: chartColors.grey,
 			fill: false,
@@ -487,14 +487,14 @@ var config = {
 			data: []
 		},
 		{
-			label: 'GAM6',
+			label: 'GAM6 mR/jam',
 			backgroundColor: color(chartColors.purple).alpha(0.5).rgbString(),
 			borderColor: chartColors.purple,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
-		{	label: 'GAM7',
+		{	label: 'GAM7 mR/jam',
 			backgroundColor: color(chartColors.yellow).alpha(0.5).rgbString(),
 			borderColor: chartColors.yellow,
 			fill: false,

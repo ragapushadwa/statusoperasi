@@ -258,7 +258,7 @@ var config = {
 	type: 'line',
 	data: {
 		datasets: [{
-			label: 'Daya',
+			label: 'Daya (Watt)',
 			backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
 			borderColor: chartColors.red,
 			fill: false,
@@ -266,14 +266,14 @@ var config = {
 			
 			data: []
 		}, {
-			label: 'Laju Alir Primer',
+			label: 'Laju Alir Primer (lpm)',
 			backgroundColor: color(chartColors.orange).alpha(0.5).rgbString(),
 			borderColor: chartColors.orange,
 			fill: false,
 			cubicInterpolationMode: 'monotone',
 			data: []
 		},
-		{	label: 'Suhu Tangki',
+		{	label: 'Suhu Tangki ℃',
 			backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
 			borderColor: chartColors.blue,
 			fill: false,

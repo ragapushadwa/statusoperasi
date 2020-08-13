@@ -305,14 +305,14 @@ var mixedChart = new Chart(ctx, {
         datasets: [{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(26, 188, 156)',
-            label: 'GAM1',
+            label: 'GAM1 mR/jam',
             data: GAM1[1]
 			
         }, 
 		{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(241, 196, 15)',
-            label: 'GAM2',
+            label: 'GAM2 mR/jam',
             data: GAM2[1],
 			
 
@@ -322,7 +322,7 @@ var mixedChart = new Chart(ctx, {
 				{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(231, 76, 60)',
-            label: 'GAM3',
+            label: 'GAM3 mR/jam',
             data: GAM3[1],
 			
 
@@ -333,7 +333,7 @@ var mixedChart = new Chart(ctx, {
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(142, 68, 173)',
 
-            label: 'GAM4',
+            label: 'GAM4 mR/jam',
             data: GAM4[1],
 			
             // Changes this dataset to become a line
@@ -343,7 +343,7 @@ var mixedChart = new Chart(ctx, {
 				 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(52, 152, 219)',
 
-            label: 'GAM5',
+            label: 'GAM5 mR/jam',
             data: GAM5[1],
 		
             // Changes this dataset to become a line
@@ -354,7 +354,7 @@ var mixedChart = new Chart(ctx, {
         backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(127, 140, 141)',
 
-            label: 'GAM6',
+            label: 'GAM6 mR/jam',
             data: GAM6[1],
 		
             // Changes this dataset to become a line
@@ -363,7 +363,7 @@ var mixedChart = new Chart(ctx, {
 		},{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(255, 99, 132)',
-            label: 'GAM7',
+            label: 'GAM7 mR/jam',
             data: GAM7[1],
 			
 

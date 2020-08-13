@@ -254,7 +254,7 @@ $(".has-submenu > a").click(function() {
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '3.78'],
+      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
       centralLabel: 'GAM1',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',

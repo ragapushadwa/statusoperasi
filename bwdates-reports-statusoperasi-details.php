@@ -293,14 +293,14 @@ var mixedChart = new Chart(ctx, {
         datasets: [{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(26, 188, 156)',
-            label: 'Laju Alir Primer',
+            label: 'Laju Alir Primer (lpm)',
             data: lists2[1]
 			
         }, 
 		{   
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(241, 196, 15)',
-            label: 'Daya',
+            label: 'Daya (Watt)',
             data: lists3[1],
 			
 
@@ -309,7 +309,7 @@ var mixedChart = new Chart(ctx, {
 		},{
 			 backgroundColor: 'rgba(0,0,0,0)',
             borderColor: 'rgb(255, 99, 132)',
-            label: 'Suhu Tangki',
+            label: 'Suhu Tangki (℃)',
             data: lists4[1],
 			
 

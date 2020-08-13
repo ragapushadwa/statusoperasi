@@ -143,30 +143,30 @@ while ($row=mysqli_fetch_array($ret)) {
                   <td><?php if($row['GAM1']>2.5){
                       echo '<p style="color:red">' . $row['GAM1'] . '</p>';
                   }else{ echo $row['GAM1'];}
-                  ?></td>
+                  ?> mR/jam</td>
 				   <td><?php if($row['GAM2']>10){
                       echo '<p style="color:red">' . $row['GAM2'] . '</p>';
                   }else{ echo $row['GAM2'];}
-                  ?></td>
+                  ?> mR/jam</td>
 				  <td><?php if($row['GAM3']>100){
                       echo '<p style="color:red">' . $row['GAM3'] . '</p>';
                   }else{ echo $row['GAM3'];}
-                  ?></td>
+                  ?> mR/jam</td>
 				   <td><?php if($row['GAM4']>25){
                       echo '<p style="color:red">' . $row['GAM4'] . '</p>';
                   }else{ echo $row['GAM4'];}
-                  ?></td>
+                  ?> mR/jam</td>
 				   <td><?php if($row['GAM5']>10){
                       echo '<p style="color:red">' . $row['GAM5'] . '</p>';
                   }else{ echo $row['GAM5'];}
-                  ?></td>
+                  ?> mR/jam</td>
 				   <td><?php if($row['GAM6']>2.5){
                       echo '<p style="color:red">' . $row['GAM6'] . '</p>';
                   }else{ echo $row['GAM6'];}
-                  ?></td>
+                  ?> mR/jam</td>
                    <td><?php if($row['GAM7']>2.5){
                       echo '<p style="color:red">' . $row['GAM7'] . '</p>';
-                  }else{ echo $row['GAM7'];}?></td>
+                  }else{ echo $row['GAM7'];}?> mR/jam</td>
                   <td><?php  echo $row['Time'];?></td>
                   <td><?php  echo $row['EnterDate'];?></td>
                 <td><?php  echo $row['outtime'];?></td>

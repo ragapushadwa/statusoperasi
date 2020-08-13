@@ -271,7 +271,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '3.78'],
+      rangeLabel: ['0  mR/jam', '3.78  mR/jam'],
       centralLabel: 'GAM1',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -288,7 +288,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '15.15'],
+      rangeLabel: ['0 mR/jam', '15.15 mR/jam'],
       centralLabel: 'GAM2',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -305,7 +305,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '151.5'],
+      rangeLabel: ['0 mR/jam', '151.5 mR/jam'],
       centralLabel: 'GAM3',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -322,7 +322,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '37.8'],
+      rangeLabel: ['0 mR/jam', '37.8 mR/jam'],
       centralLabel: 'GAM4',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -339,7 +339,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '15.15'],
+      rangeLabel: ['0 mR/jam', '15.15 mR/jam'],
       centralLabel: 'GAM5',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -356,7 +356,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '3.78'],
+      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
       centralLabel: 'GAM6',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
@@ -373,7 +373,7 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0', '3.78'],
+      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
       centralLabel: 'GAM7',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
