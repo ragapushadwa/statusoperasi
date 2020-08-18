@@ -246,7 +246,7 @@ $(".has-submenu > a").click(function() {
   let gaugeOptions = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(61, 204, 91)', 'rgb(239, 214, 19)', 'rgb(255, 84, 84)'],
+      arcColors: ['rgb(61, 204, 91)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3, 66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -254,8 +254,8 @@ $(".has-submenu > a").click(function() {
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
-      centralLabel: 'GAM1',
+      rangeLabel: ['0', '3.78'],
+      centralLabel: 'GAM1 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,

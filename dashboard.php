@@ -263,7 +263,7 @@ $count_total_visitors=mysqli_num_rows($query3);
   let gaugeOptions = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3,66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -271,8 +271,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0  mR/jam', '3.78  mR/jam'],
-      centralLabel: 'GAM1',
+      rangeLabel: ['0', '3.78'],
+      centralLabel: 'GAM1 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -280,7 +280,7 @@ $count_total_visitors=mysqli_num_rows($query3);
   let gaugeOptions1 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3,66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -288,8 +288,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '15.15 mR/jam'],
-      centralLabel: 'GAM2',
+      rangeLabel: ['0', '15.15'],
+      centralLabel: 'GAM2 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -297,7 +297,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	  let gaugeOptions2 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3, 66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -305,8 +305,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '151.5 mR/jam'],
-      centralLabel: 'GAM3',
+      rangeLabel: ['0', '151.5'],
+      centralLabel: 'GAM3 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -314,7 +314,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	  let gaugeOptions3 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3, 66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -322,8 +322,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '37.8 mR/jam'],
-      centralLabel: 'GAM4',
+      rangeLabel: ['0', '37.8'],
+      centralLabel: 'GAM4 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -331,7 +331,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	  let gaugeOptions4 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3, 66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -339,8 +339,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '15.15 mR/jam'],
-      centralLabel: 'GAM5',
+      rangeLabel: ['0', '15.15'],
+      centralLabel: 'GAM5 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -348,7 +348,7 @@ $count_total_visitors=mysqli_num_rows($query3);
 	  let gaugeOptions5 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3, 66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -356,8 +356,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
-      centralLabel: 'GAM6',
+      rangeLabel: ['0', '3.78'],
+      centralLabel: 'GAM6 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
@@ -365,7 +365,7 @@ $count_total_visitors=mysqli_num_rows($query3);
     let gaugeOptions6 = {
 	    hasNeedle: true,
 	    needleColor: 'black',
-      arcColors: ['rgb(39, 174, 96)', 'rgb(241, 196, 15)', 'rgb(231, 76, 60)'],
+      arcColors: ['rgb(39, 174, 96)', 'rgb(255, 255, 0)', 'rgb(213, 0, 0)'],
       arcDelimiters: [33.3,66.6],
       arcPadding: 6,
       arcPaddingColor: 'none',
@@ -373,8 +373,8 @@ $count_total_visitors=mysqli_num_rows($query3);
       arcLabelFontSize: false,
       //arcOverEffect: false,
       // label options
-      rangeLabel: ['0 mR/jam', '3.78 mR/jam'],
-      centralLabel: 'GAM7',
+      rangeLabel: ['0', '3.78'],
+      centralLabel: 'GAM7 mR/jam',
       rangeLabelFontSize: false,
       labelsFont: 'Consolas',
 	  needleUpdateSpeed: 0,
